@@ -1,0 +1,12 @@
+﻿stats
+=====
+
+.. automodule:: xbrl_filings_api.stats
+
+   .. rubric:: Module Attributes
+
+   .. autosummary::
+   
+      query_call_counter
+      api_query_counter
+      page_counter

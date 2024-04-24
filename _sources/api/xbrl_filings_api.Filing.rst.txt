@@ -1,0 +1,49 @@
+﻿Filing
+======
+
+.. currentmodule:: xbrl_filings_api
+
+.. autoclass:: Filing
+
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Filing.download
+      ~Filing.download_aiter
+      ~Filing.get_data_attributes
+      ~Filing.open
+      ~Filing.__hash__
+      ~Filing.__repr__
+      ~Filing.__str__
+
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Filing.country
+      ~Filing.filing_index
+      ~Filing.language
+      ~Filing.last_end_date
+      ~Filing.reporting_date
+      ~Filing.error_count
+      ~Filing.inconsistency_count
+      ~Filing.warning_count
+      ~Filing.added_time
+      ~Filing.added_time_str
+      ~Filing.processed_time
+      ~Filing.processed_time_str
+      ~Filing.entity_api_id
+      ~Filing.entity
+      ~Filing.validation_messages
+      ~Filing.json_url
+      ~Filing.package_url
+      ~Filing.viewer_url
+      ~Filing.xhtml_url
+      ~Filing.json_download_path
+      ~Filing.package_download_path
+      ~Filing.xhtml_download_path
+      ~Filing.package_sha256
+      ~Filing.api_id
+      ~Filing.query_time
+      ~Filing.request_url

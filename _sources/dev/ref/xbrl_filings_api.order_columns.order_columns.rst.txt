@@ -1,0 +1,6 @@
+﻿order\_columns.order\_columns
+=============================
+
+.. currentmodule:: xbrl_filings_api.order_columns
+
+.. autofunction:: order_columns

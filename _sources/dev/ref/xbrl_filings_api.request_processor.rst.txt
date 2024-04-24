@@ -1,0 +1,10 @@
+﻿request\_processor
+==================
+
+.. automodule:: xbrl_filings_api.request_processor
+
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      generate_pages

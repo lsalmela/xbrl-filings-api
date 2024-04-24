@@ -1,0 +1,1179 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="#" /><link rel="search" title="Search" href="search.html" />
+
+    <!-- Generated with Sphinx 7.3.7 and Furo 2024.01.29 --><title>Index - xbrl-filings-api 1.0a1 documentation</title>
+<link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">xbrl-filings-api 1.0a1 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">xbrl-filings-api 1.0a1 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reporting-date-or-last-end-date.html">Using reporting_date or last_end_date</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api-reference.html">API reference</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of API reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.query.html">query</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.Filing.html">Filing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.Entity.html">Entity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.ValidationMessage.html">ValidationMessage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.APIError.html">APIError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.FilingSet.html">FilingSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.ResourceCollection.html">ResourceCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.FilingsPage.html">FilingsPage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.APIPage.html">APIPage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.DownloadInfo.html">DownloadInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.DownloadItem.html">DownloadItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.APIObject.html">APIObject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.APIResource.html">APIResource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.SQLiteView.html">SQLiteView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.constants.html">constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.ScopeFlag.html">ScopeFlag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.DEFAULT_VIEWS.html">DEFAULT_VIEWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.exceptions.html">exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.options.html">options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.stats.html">stats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.debug.html">debug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.downloader.html">downloader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.downloader.stats.html">downloader.stats</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="dev/index.html">Development</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Development</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev/before-commit.html">Before commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev/doc-conventions.html">Documentation conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev/release-checklist.html">Release checklist</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dev/internal-reference.html">Internal reference</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Internal reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dev/ref/xbrl_filings_api.database_processor.html">database_processor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/ref/xbrl_filings_api.download_info.DownloadInfo.html">download_info.DownloadInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/ref/xbrl_filings_api.download_specs_construct.html">download_specs_construct</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/ref/xbrl_filings_api.json_tree.JSONTree.html">json_tree.JSONTree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/ref/xbrl_filings_api.lang_code_transform.html">lang_code_transform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/ref/xbrl_filings_api.order_columns.order_columns.html">order_columns.order_columns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/ref/xbrl_filings_api.parse_type.ParseType.html">parse_type.ParseType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/ref/xbrl_filings_api.request_processor.html">request_processor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          
+<section class="genindex-section">
+  <h1 id="index">Index</h1>
+  <div class="genindex-jumpbox"><a href="#_"><strong>_</strong></a> | <a href="#A"><strong>A</strong></a> | <a href="#B"><strong>B</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#E"><strong>E</strong></a> | <a href="#F"><strong>F</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#H"><strong>H</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#J"><strong>J</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#N"><strong>N</strong></a> | <a href="#O"><strong>O</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#Q"><strong>Q</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#U"><strong>U</strong></a> | <a href="#V"><strong>V</strong></a> | <a href="#W"><strong>W</strong></a> | <a href="#X"><strong>X</strong></a> | <a href="#Y"><strong>Y</strong></a></div>
+</section>
+<section id="_" class="genindex-section">
+  <h2>_</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.ResourceCollection.html#xbrl_filings_api.ResourceCollection.__contains__">__contains__() (xbrl_filings_api.ResourceCollection method)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.APIResource.html#xbrl_filings_api.APIResource.__eq__">__eq__() (xbrl_filings_api.APIResource method)</a>
+</li>
+        <li><a href="dev/ref/xbrl_filings_api.download_info.DownloadInfo.html#xbrl_filings_api.download_info.DownloadInfo.__hash__">__hash__ (xbrl_filings_api.download_info.DownloadInfo attribute)</a>
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.DownloadInfo.html#xbrl_filings_api.DownloadInfo.__hash__">(xbrl_filings_api.DownloadInfo attribute)</a>
+</li>
+          <li><a href="api/xbrl_filings_api.DownloadItem.html#xbrl_filings_api.DownloadItem.__hash__">(xbrl_filings_api.DownloadItem attribute)</a>
+</li>
+          <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.__hash__">(xbrl_filings_api.FilingSet attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="api/xbrl_filings_api.APIResource.html#xbrl_filings_api.APIResource.__hash__">__hash__() (xbrl_filings_api.APIResource method)</a>
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.DownloadResult.__hash__">(xbrl_filings_api.downloader.DownloadResult method)</a>
+</li>
+          <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.DownloadSpecs.__hash__">(xbrl_filings_api.downloader.DownloadSpecs method)</a>
+</li>
+          <li><a href="api/xbrl_filings_api.SQLiteView.html#xbrl_filings_api.SQLiteView.__hash__">(xbrl_filings_api.SQLiteView method)</a>
+</li>
+        </ul></li>
+        <li><a href="api/xbrl_filings_api.ResourceCollection.html#xbrl_filings_api.ResourceCollection.__iter__">__iter__() (xbrl_filings_api.ResourceCollection method)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.ResourceCollection.html#xbrl_filings_api.ResourceCollection.__len__">__len__() (xbrl_filings_api.ResourceCollection method)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.ScopeFlag.html#xbrl_filings_api.ScopeFlag.__new__">__new__() (xbrl_filings_api.ScopeFlag method)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.APIError.html#xbrl_filings_api.APIError.__repr__">__repr__() (xbrl_filings_api.APIError method)</a>
+
+        <ul>
+          <li><a href="dev/ref/xbrl_filings_api.download_info.DownloadInfo.html#xbrl_filings_api.download_info.DownloadInfo.__repr__">(xbrl_filings_api.download_info.DownloadInfo method)</a>
+</li>
+          <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.DownloadResult.__repr__">(xbrl_filings_api.downloader.DownloadResult method)</a>
+</li>
+          <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.DownloadSpecs.__repr__">(xbrl_filings_api.downloader.DownloadSpecs method)</a>
+</li>
+          <li><a href="api/xbrl_filings_api.DownloadInfo.html#xbrl_filings_api.DownloadInfo.__repr__">(xbrl_filings_api.DownloadInfo method)</a>
+</li>
+          <li><a href="api/xbrl_filings_api.DownloadItem.html#xbrl_filings_api.DownloadItem.__repr__">(xbrl_filings_api.DownloadItem method)</a>
+</li>
+          <li><a href="api/xbrl_filings_api.Entity.html#xbrl_filings_api.Entity.__repr__">(xbrl_filings_api.Entity method)</a>
+</li>
+          <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.__repr__">(xbrl_filings_api.Filing method)</a>
+</li>
+          <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.__repr__">(xbrl_filings_api.FilingSet method)</a>
+</li>
+          <li><a href="api/xbrl_filings_api.FilingsPage.html#xbrl_filings_api.FilingsPage.__repr__">(xbrl_filings_api.FilingsPage method)</a>
+</li>
+          <li><a href="api/xbrl_filings_api.ResourceCollection.html#xbrl_filings_api.ResourceCollection.__repr__">(xbrl_filings_api.ResourceCollection method)</a>
+</li>
+          <li><a href="api/xbrl_filings_api.SQLiteView.html#xbrl_filings_api.SQLiteView.__repr__">(xbrl_filings_api.SQLiteView method)</a>
+</li>
+          <li><a href="api/xbrl_filings_api.ValidationMessage.html#xbrl_filings_api.ValidationMessage.__repr__">(xbrl_filings_api.ValidationMessage method)</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.APIError.html#xbrl_filings_api.APIError.__str__">__str__() (xbrl_filings_api.APIError method)</a>
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.Entity.html#xbrl_filings_api.Entity.__str__">(xbrl_filings_api.Entity method)</a>
+</li>
+          <li><a href="api/xbrl_filings_api.exceptions.html#xbrl_filings_api.exceptions.FilingsAPIError.__str__">(xbrl_filings_api.exceptions.FilingsAPIError method)</a>
+</li>
+          <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.__str__">(xbrl_filings_api.Filing method)</a>
+</li>
+          <li><a href="api/xbrl_filings_api.ValidationMessage.html#xbrl_filings_api.ValidationMessage.__str__">(xbrl_filings_api.ValidationMessage method)</a>
+</li>
+        </ul></li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="A" class="genindex-section">
+  <h2>A</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.add">add() (xbrl_filings_api.FilingSet method)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.added_time">added_time (xbrl_filings_api.Filing attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.added_time_str">added_time_str (xbrl_filings_api.Filing attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.constants.html#xbrl_filings_api.constants.api_attribute_map">api_attribute_map (in module xbrl_filings_api.constants)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.Entity.html#xbrl_filings_api.Entity.api_entity_filings_url">api_entity_filings_url (xbrl_filings_api.Entity attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.APIPage.html#xbrl_filings_api.APIPage.api_first_page_url">api_first_page_url (xbrl_filings_api.APIPage attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.APIResource.html#xbrl_filings_api.APIResource.api_id">api_id (xbrl_filings_api.APIResource attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.APIPage.html#xbrl_filings_api.APIPage.api_last_page_url">api_last_page_url (xbrl_filings_api.APIPage attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.APIPage.html#xbrl_filings_api.APIPage.api_next_page_url">api_next_page_url (xbrl_filings_api.APIPage attribute)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.APIPage.html#xbrl_filings_api.APIPage.api_prev_page_url">api_prev_page_url (xbrl_filings_api.APIPage attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.stats.html#xbrl_filings_api.stats.api_query_counter">api_query_counter (in module xbrl_filings_api.stats)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.APIPage.html#xbrl_filings_api.APIPage.api_self_url">api_self_url (xbrl_filings_api.APIPage attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.APIError.html#xbrl_filings_api.APIError.api_status">api_status (xbrl_filings_api.APIError attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.APIError.html#xbrl_filings_api.APIError">APIError</a>
+</li>
+        <li><a href="api/xbrl_filings_api.APIObject.html#xbrl_filings_api.APIObject">APIObject (class in xbrl_filings_api)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.APIPage.html#xbrl_filings_api.APIPage">APIPage (class in xbrl_filings_api)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.APIResource.html#xbrl_filings_api.APIResource">APIResource (class in xbrl_filings_api)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.constants.html#xbrl_filings_api.constants.ATTRS_ALWAYS_EXCLUDE_FROM_DATA">ATTRS_ALWAYS_EXCLUDE_FROM_DATA (in module xbrl_filings_api.constants)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="B" class="genindex-section">
+  <h2>B</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.exceptions.html#xbrl_filings_api.exceptions.HTTPStatusError.body">body (xbrl_filings_api.exceptions.HTTPStatusError attribute)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.options.html#xbrl_filings_api.options.browser">browser (in module xbrl_filings_api.options)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.downloader.stats.html#xbrl_filings_api.downloader.stats.byte_counter">byte_counter (in module xbrl_filings_api.downloader.stats)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="C" class="genindex-section">
+  <h2>C</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.ValidationMessage.html#xbrl_filings_api.ValidationMessage.calc_computed_sum">calc_computed_sum (xbrl_filings_api.ValidationMessage attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.ValidationMessage.html#xbrl_filings_api.ValidationMessage.calc_context_id">calc_context_id (xbrl_filings_api.ValidationMessage attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.ValidationMessage.html#xbrl_filings_api.ValidationMessage.calc_line_item">calc_line_item (xbrl_filings_api.ValidationMessage attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.ValidationMessage.html#xbrl_filings_api.ValidationMessage.calc_reported_sum">calc_reported_sum (xbrl_filings_api.ValidationMessage attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.ValidationMessage.html#xbrl_filings_api.ValidationMessage.calc_short_role">calc_short_role (xbrl_filings_api.ValidationMessage attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.ValidationMessage.html#xbrl_filings_api.ValidationMessage.calc_unreported_items">calc_unreported_items (xbrl_filings_api.ValidationMessage attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.CorruptDownloadError.calculated_hash">calculated_hash (xbrl_filings_api.downloader.CorruptDownloadError attribute)</a>
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.exceptions.html#xbrl_filings_api.exceptions.CorruptDownloadError.calculated_hash">(xbrl_filings_api.exceptions.CorruptDownloadError attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="dev/ref/xbrl_filings_api.json_tree.JSONTree.html#xbrl_filings_api.json_tree.JSONTree.class_name">class_name (xbrl_filings_api.json_tree.JSONTree attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.clear">clear() (xbrl_filings_api.FilingSet method)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="dev/ref/xbrl_filings_api.json_tree.JSONTree.html#xbrl_filings_api.json_tree.JSONTree.close">close() (xbrl_filings_api.json_tree.JSONTree method)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.APIError.html#xbrl_filings_api.APIError.code">code (xbrl_filings_api.APIError attribute)</a>
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.ValidationMessage.html#xbrl_filings_api.ValidationMessage.code">(xbrl_filings_api.ValidationMessage attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="glossary.html#term-collection"><strong>collection</strong></a>
+</li>
+        <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.columns">columns (xbrl_filings_api.FilingSet property)</a>
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.ResourceCollection.html#xbrl_filings_api.ResourceCollection.columns">(xbrl_filings_api.ResourceCollection property)</a>
+</li>
+        </ul></li>
+        <li><a href="dev/ref/xbrl_filings_api.download_specs_construct.html#xbrl_filings_api.download_specs_construct.construct">construct() (in module xbrl_filings_api.download_specs_construct)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.copy">copy() (xbrl_filings_api.FilingSet method)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.CorruptDownloadError">CorruptDownloadError</a>, <a href="api/xbrl_filings_api.exceptions.html#xbrl_filings_api.exceptions.CorruptDownloadError">[1]</a>
+</li>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.country">country (xbrl_filings_api.Filing attribute)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="D" class="genindex-section">
+  <h2>D</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.constants.html#xbrl_filings_api.constants.DataAttributeType">DataAttributeType (in module xbrl_filings_api.constants)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.exceptions.html#xbrl_filings_api.exceptions.DatabaseSchemaUnmatchError">DatabaseSchemaUnmatchError</a>
+</li>
+        <li><a href="dev/ref/xbrl_filings_api.parse_type.ParseType.html#xbrl_filings_api.parse_type.ParseType.DATE">DATE (xbrl_filings_api.parse_type.ParseType attribute)</a>
+</li>
+        <li><a href="dev/ref/xbrl_filings_api.parse_type.ParseType.html#xbrl_filings_api.parse_type.ParseType.DATETIME">DATETIME (xbrl_filings_api.parse_type.ParseType attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.DEFAULT_VIEWS.html#xbrl_filings_api.DEFAULT_VIEWS">DEFAULT_VIEWS (in module xbrl_filings_api)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.APIError.html#xbrl_filings_api.APIError.detail">detail (xbrl_filings_api.APIError attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.difference">difference() (xbrl_filings_api.FilingSet method)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.difference_update">difference_update() (xbrl_filings_api.FilingSet method)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.discard">discard() (xbrl_filings_api.FilingSet method)</a>
+</li>
+        <li><a href="dev/ref/xbrl_filings_api.json_tree.JSONTree.html#xbrl_filings_api.json_tree.JSONTree.do_not_track">do_not_track (xbrl_filings_api.json_tree.JSONTree attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.download">download() (in module xbrl_filings_api.downloader)</a>
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.download">(xbrl_filings_api.Filing method)</a>
+</li>
+          <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.download">(xbrl_filings_api.FilingSet method)</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.download_aiter">download_aiter() (xbrl_filings_api.Filing method)</a>
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.download_aiter">(xbrl_filings_api.FilingSet method)</a>
+</li>
+        </ul></li>
+        <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.download_async">download_async() (in module xbrl_filings_api.downloader)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.download_parallel">download_parallel() (in module xbrl_filings_api.downloader)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.download_parallel_aiter">download_parallel_aiter() (in module xbrl_filings_api.downloader)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.DownloadInfo.html#xbrl_filings_api.DownloadInfo">DownloadInfo (class in xbrl_filings_api)</a>
+
+        <ul>
+          <li><a href="dev/ref/xbrl_filings_api.download_info.DownloadInfo.html#xbrl_filings_api.download_info.DownloadInfo">(class in xbrl_filings_api.download_info)</a>
+</li>
+        </ul></li>
+        <li><a href="api/xbrl_filings_api.DownloadItem.html#xbrl_filings_api.DownloadItem">DownloadItem (class in xbrl_filings_api)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.DownloadResult">DownloadResult (class in xbrl_filings_api.downloader)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.DownloadSpecs">DownloadSpecs (class in xbrl_filings_api.downloader)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.ValidationMessage.html#xbrl_filings_api.ValidationMessage.duplicate_greater">duplicate_greater (xbrl_filings_api.ValidationMessage attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.ValidationMessage.html#xbrl_filings_api.ValidationMessage.duplicate_lesser">duplicate_lesser (xbrl_filings_api.ValidationMessage attribute)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="E" class="genindex-section">
+  <h2>E</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.entities">entities (xbrl_filings_api.FilingSet attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.Entity.html#xbrl_filings_api.Entity">Entity (class in xbrl_filings_api)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.entity">entity (xbrl_filings_api.Filing attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.entity_api_id">entity_api_id (xbrl_filings_api.Filing attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.FilingsPage.html#xbrl_filings_api.FilingsPage.entity_list">entity_list (xbrl_filings_api.FilingsPage attribute)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.options.html#xbrl_filings_api.options.entry_point_url">entry_point_url (in module xbrl_filings_api.options)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.DownloadResult.err">err (xbrl_filings_api.downloader.DownloadResult attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.error_count">error_count (xbrl_filings_api.Filing attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.ResourceCollection.html#xbrl_filings_api.ResourceCollection.exist">exist (xbrl_filings_api.ResourceCollection property)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.CorruptDownloadError.expected_hash">expected_hash (xbrl_filings_api.downloader.CorruptDownloadError attribute)</a>
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.exceptions.html#xbrl_filings_api.exceptions.CorruptDownloadError.expected_hash">(xbrl_filings_api.exceptions.CorruptDownloadError attribute)</a>
+</li>
+        </ul></li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="F" class="genindex-section">
+  <h2>F</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="dev/ref/xbrl_filings_api.download_info.DownloadInfo.html#xbrl_filings_api.download_info.DownloadInfo.file">file (xbrl_filings_api.download_info.DownloadInfo attribute)</a>
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.DownloadInfo.html#xbrl_filings_api.DownloadInfo.file">(xbrl_filings_api.DownloadInfo attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="api/xbrl_filings_api.constants.html#xbrl_filings_api.constants.FILE_STRING_CHOICE">FILE_STRING_CHOICE (in module xbrl_filings_api.constants)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.DownloadSpecs.filename">filename (xbrl_filings_api.downloader.DownloadSpecs attribute)</a>
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.DownloadItem.html#xbrl_filings_api.DownloadItem.filename">(xbrl_filings_api.DownloadItem attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="api/xbrl_filings_api.constants.html#xbrl_filings_api.constants.FileStringType">FileStringType (in module xbrl_filings_api.constants)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing">Filing (class in xbrl_filings_api)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.ValidationMessage.html#xbrl_filings_api.ValidationMessage.filing">filing (xbrl_filings_api.ValidationMessage attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.ValidationMessage.html#xbrl_filings_api.ValidationMessage.filing_api_id">filing_api_id (xbrl_filings_api.ValidationMessage attribute)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.filing_index">filing_index (xbrl_filings_api.Filing attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.FilingsPage.html#xbrl_filings_api.FilingsPage.filing_list">filing_list (xbrl_filings_api.FilingsPage attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.query.html#xbrl_filings_api.query.filing_page_iter">filing_page_iter() (in module xbrl_filings_api.query)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.Entity.html#xbrl_filings_api.Entity.filings">filings (xbrl_filings_api.Entity attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.exceptions.html#xbrl_filings_api.exceptions.FilingsAPIError">FilingsAPIError</a>
+</li>
+        <li><a href="api/xbrl_filings_api.exceptions.html#xbrl_filings_api.exceptions.FilingsAPIWarning">FilingsAPIWarning</a>
+</li>
+        <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet">FilingSet (class in xbrl_filings_api)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.ResourceCollection.html#xbrl_filings_api.ResourceCollection.filingset">filingset (xbrl_filings_api.ResourceCollection attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.FilingsPage.html#xbrl_filings_api.FilingsPage">FilingsPage (class in xbrl_filings_api)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.exceptions.html#xbrl_filings_api.exceptions.FilterNotSupportedWarning">FilterNotSupportedWarning</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="G" class="genindex-section">
+  <h2>G</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="dev/ref/xbrl_filings_api.request_processor.html#xbrl_filings_api.request_processor.generate_pages">generate_pages() (in module xbrl_filings_api.request_processor)</a>
+</li>
+        <li><a href="dev/ref/xbrl_filings_api.json_tree.JSONTree.html#xbrl_filings_api.json_tree.JSONTree.get">get() (xbrl_filings_api.json_tree.JSONTree method)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.APIResource.html#xbrl_filings_api.APIResource.get_data_attributes">get_data_attributes() (xbrl_filings_api.APIResource class method)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.ScopeFlag.html#xbrl_filings_api.ScopeFlag.GET_ENTITY">GET_ENTITY (xbrl_filings_api.ScopeFlag attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.query.html#xbrl_filings_api.query.get_filings">get_filings() (in module xbrl_filings_api.query)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.debug.html#xbrl_filings_api.debug.get_key_path_availability_counts">get_key_path_availability_counts() (in module xbrl_filings_api.debug)</a>
+
+        <ul>
+          <li><a href="dev/ref/xbrl_filings_api.json_tree.JSONTree.html#xbrl_filings_api.json_tree.JSONTree.get_key_path_availability_counts">(xbrl_filings_api.json_tree.JSONTree class method)</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.ScopeFlag.html#xbrl_filings_api.ScopeFlag.GET_ONLY_FILINGS">GET_ONLY_FILINGS (xbrl_filings_api.ScopeFlag attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.get_pandas_data">get_pandas_data() (xbrl_filings_api.FilingSet method)</a>
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.ResourceCollection.html#xbrl_filings_api.ResourceCollection.get_pandas_data">(xbrl_filings_api.ResourceCollection method)</a>
+</li>
+        </ul></li>
+        <li><a href="api/xbrl_filings_api.debug.html#xbrl_filings_api.debug.get_unaccessed_key_paths">get_unaccessed_key_paths() (in module xbrl_filings_api.debug)</a>
+
+        <ul>
+          <li><a href="dev/ref/xbrl_filings_api.json_tree.JSONTree.html#xbrl_filings_api.json_tree.JSONTree.get_unaccessed_key_paths">(xbrl_filings_api.json_tree.JSONTree class method)</a>
+</li>
+        </ul></li>
+        <li><a href="api/xbrl_filings_api.debug.html#xbrl_filings_api.debug.get_unexpected_resource_types">get_unexpected_resource_types() (in module xbrl_filings_api.debug)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.ScopeFlag.html#xbrl_filings_api.ScopeFlag.GET_VALIDATION_MESSAGES">GET_VALIDATION_MESSAGES (xbrl_filings_api.ScopeFlag attribute)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="H" class="genindex-section">
+  <h2>H</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.exceptions.html#xbrl_filings_api.exceptions.HTTPStatusError">HTTPStatusError</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="I" class="genindex-section">
+  <h2>I</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.Entity.html#xbrl_filings_api.Entity.identifier">identifier (xbrl_filings_api.Entity attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.inconsistency_count">inconsistency_count (xbrl_filings_api.Filing attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.DownloadResult.info">info (xbrl_filings_api.downloader.DownloadResult attribute)</a>
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.DownloadSpecs.info">(xbrl_filings_api.downloader.DownloadSpecs attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.intersection">intersection() (xbrl_filings_api.FilingSet method)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.intersection_update">intersection_update() (xbrl_filings_api.FilingSet method)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.isdisjoint">isdisjoint() (xbrl_filings_api.FilingSet method)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.issubset">issubset() (xbrl_filings_api.FilingSet method)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.issuperset">issuperset() (xbrl_filings_api.FilingSet method)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.ResourceCollection.html#xbrl_filings_api.ResourceCollection.item_class">item_class (xbrl_filings_api.ResourceCollection attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.downloader.stats.html#xbrl_filings_api.downloader.stats.item_counter">item_counter (in module xbrl_filings_api.downloader.stats)</a>
+</li>
+        <li><a href="glossary.html#term-iterable"><strong>iterable</strong></a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="J" class="genindex-section">
+  <h2>J</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.json_download_path">json_download_path (xbrl_filings_api.Filing attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.json_url">json_url (xbrl_filings_api.Filing attribute)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.APIPage.html#xbrl_filings_api.APIPage.jsonapi_version">jsonapi_version (xbrl_filings_api.APIPage attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.exceptions.html#xbrl_filings_api.exceptions.JSONAPIFormatError">JSONAPIFormatError</a>
+</li>
+        <li><a href="dev/ref/xbrl_filings_api.json_tree.JSONTree.html#xbrl_filings_api.json_tree.JSONTree">JSONTree (class in xbrl_filings_api.json_tree)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="L" class="genindex-section">
+  <h2>L</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.language">language (xbrl_filings_api.Filing attribute)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.last_end_date">last_end_date (xbrl_filings_api.Filing attribute)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="M" class="genindex-section">
+  <h2>M</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="glossary.html#term-mapping"><strong>mapping</strong></a>
+</li>
+        <li><a href="api/xbrl_filings_api.options.html#xbrl_filings_api.options.max_page_size">max_page_size (in module xbrl_filings_api.options)</a>
+</li>
+        <li>
+    module
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.constants.html#module-xbrl_filings_api.constants">xbrl_filings_api.constants</a>
+</li>
+          <li><a href="dev/ref/xbrl_filings_api.database_processor.html#module-xbrl_filings_api.database_processor">xbrl_filings_api.database_processor</a>
+</li>
+          <li><a href="api/xbrl_filings_api.debug.html#module-xbrl_filings_api.debug">xbrl_filings_api.debug</a>
+</li>
+          <li><a href="dev/ref/xbrl_filings_api.download_specs_construct.html#module-xbrl_filings_api.download_specs_construct">xbrl_filings_api.download_specs_construct</a>
+</li>
+          <li><a href="api/xbrl_filings_api.downloader.html#module-xbrl_filings_api.downloader">xbrl_filings_api.downloader</a>
+</li>
+          <li><a href="api/xbrl_filings_api.downloader.stats.html#module-xbrl_filings_api.downloader.stats">xbrl_filings_api.downloader.stats</a>
+</li>
+          <li><a href="api/xbrl_filings_api.exceptions.html#module-xbrl_filings_api.exceptions">xbrl_filings_api.exceptions</a>
+</li>
+          <li><a href="dev/ref/xbrl_filings_api.lang_code_transform.html#module-xbrl_filings_api.lang_code_transform">xbrl_filings_api.lang_code_transform</a>
+</li>
+          <li><a href="api/xbrl_filings_api.options.html#module-xbrl_filings_api.options">xbrl_filings_api.options</a>
+</li>
+          <li><a href="api/xbrl_filings_api.query.html#module-xbrl_filings_api.query">xbrl_filings_api.query</a>
+</li>
+          <li><a href="dev/ref/xbrl_filings_api.request_processor.html#module-xbrl_filings_api.request_processor">xbrl_filings_api.request_processor</a>
+</li>
+          <li><a href="api/xbrl_filings_api.stats.html#module-xbrl_filings_api.stats">xbrl_filings_api.stats</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.exceptions.html#xbrl_filings_api.exceptions.JSONAPIFormatError.msg">msg (xbrl_filings_api.exceptions.JSONAPIFormatError attribute)</a>
+</li>
+        <li><a href="glossary.html#term-mutable-set"><strong>mutable set</strong></a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="N" class="genindex-section">
+  <h2>N</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.Entity.html#xbrl_filings_api.Entity.name">name (xbrl_filings_api.Entity attribute)</a>
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.SQLiteView.html#xbrl_filings_api.SQLiteView.name">(xbrl_filings_api.SQLiteView attribute)</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.constants.html#xbrl_filings_api.constants.NO_LIMIT">NO_LIMIT (in module xbrl_filings_api.constants)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="O" class="genindex-section">
+  <h2>O</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="dev/ref/xbrl_filings_api.download_info.DownloadInfo.html#xbrl_filings_api.download_info.DownloadInfo.obj">obj (xbrl_filings_api.download_info.DownloadInfo attribute)</a>
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.DownloadInfo.html#xbrl_filings_api.DownloadInfo.obj">(xbrl_filings_api.DownloadInfo attribute)</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.open">open() (xbrl_filings_api.Filing method)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.options.html#xbrl_filings_api.options.open_viewer">open_viewer (in module xbrl_filings_api.options)</a>
+</li>
+        <li><a href="dev/ref/xbrl_filings_api.order_columns.order_columns.html#xbrl_filings_api.order_columns.order_columns">order_columns() (in module xbrl_filings_api.order_columns)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="P" class="genindex-section">
+  <h2>P</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.package_download_path">package_download_path (xbrl_filings_api.Filing attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.package_sha256">package_sha256 (xbrl_filings_api.Filing attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.package_url">package_url (xbrl_filings_api.Filing attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.stats.html#xbrl_filings_api.stats.page_counter">page_counter (in module xbrl_filings_api.stats)</a>
+</li>
+        <li><a href="dev/ref/xbrl_filings_api.parse_type.ParseType.html#xbrl_filings_api.parse_type.ParseType">ParseType (class in xbrl_filings_api.parse_type)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.CorruptDownloadError.path">path (xbrl_filings_api.downloader.CorruptDownloadError attribute)</a>
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.DownloadResult.path">(xbrl_filings_api.downloader.DownloadResult attribute)</a>
+</li>
+          <li><a href="api/xbrl_filings_api.exceptions.html#xbrl_filings_api.exceptions.CorruptDownloadError.path">(xbrl_filings_api.exceptions.CorruptDownloadError attribute)</a>
+</li>
+          <li><a href="api/xbrl_filings_api.exceptions.html#xbrl_filings_api.exceptions.DatabaseSchemaUnmatchError.path">(xbrl_filings_api.exceptions.DatabaseSchemaUnmatchError attribute)</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="glossary.html#term-path-like"><strong>path-like</strong></a>
+</li>
+        <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.pop">pop() (xbrl_filings_api.FilingSet method)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.pop_duplicates">pop_duplicates() (xbrl_filings_api.FilingSet method)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.processed_time">processed_time (xbrl_filings_api.Filing attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.processed_time_str">processed_time_str (xbrl_filings_api.Filing attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.constants.html#xbrl_filings_api.constants.Prototype">Prototype (class in xbrl_filings_api.constants)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.constants.html#xbrl_filings_api.constants.PROTOTYPE">PROTOTYPE (in module xbrl_filings_api.constants)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="Q" class="genindex-section">
+  <h2>Q</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.stats.html#xbrl_filings_api.stats.query_call_counter">query_call_counter (in module xbrl_filings_api.stats)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.FilingsPage.html#xbrl_filings_api.FilingsPage.query_filing_count">query_filing_count (xbrl_filings_api.FilingsPage attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.APIObject.html#xbrl_filings_api.APIObject.query_time">query_time (xbrl_filings_api.APIObject attribute)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="R" class="genindex-section">
+  <h2>R</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.remove">remove() (xbrl_filings_api.FilingSet method)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.reporting_date">reporting_date (xbrl_filings_api.Filing attribute)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.APIObject.html#xbrl_filings_api.APIObject.request_url">request_url (xbrl_filings_api.APIObject attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.SQLiteView.html#xbrl_filings_api.SQLiteView.required_tables">required_tables (xbrl_filings_api.SQLiteView attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.ResourceCollection.html#xbrl_filings_api.ResourceCollection">ResourceCollection (class in xbrl_filings_api)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="S" class="genindex-section">
+  <h2>S</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.ScopeFlag.html#xbrl_filings_api.ScopeFlag">ScopeFlag (class in xbrl_filings_api)</a>
+</li>
+        <li><a href="glossary.html#term-sequence"><strong>sequence</strong></a>
+</li>
+        <li><a href="dev/ref/xbrl_filings_api.database_processor.html#xbrl_filings_api.database_processor.sets_to_sqlite">sets_to_sqlite() (in module xbrl_filings_api.database_processor)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.ValidationMessage.html#xbrl_filings_api.ValidationMessage.severity">severity (xbrl_filings_api.ValidationMessage attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.DownloadSpecs.sha256">sha256 (xbrl_filings_api.downloader.DownloadSpecs attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.SQLiteView.html#xbrl_filings_api.SQLiteView.sql">sql (xbrl_filings_api.SQLiteView attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.SQLiteView.html#xbrl_filings_api.SQLiteView">SQLiteView (class in xbrl_filings_api)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.APIError.html#xbrl_filings_api.APIError.status">status (xbrl_filings_api.APIError attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.exceptions.html#xbrl_filings_api.exceptions.HTTPStatusError.status_code">status_code (xbrl_filings_api.exceptions.HTTPStatusError attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.APIError.html#xbrl_filings_api.APIError.status_text">status_text (xbrl_filings_api.APIError attribute)</a>
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.exceptions.html#xbrl_filings_api.exceptions.HTTPStatusError.status_text">(xbrl_filings_api.exceptions.HTTPStatusError attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.DownloadSpecs.stem_pattern">stem_pattern (xbrl_filings_api.downloader.DownloadSpecs attribute)</a>
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.DownloadItem.html#xbrl_filings_api.DownloadItem.stem_pattern">(xbrl_filings_api.DownloadItem attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.symmetric_difference">symmetric_difference() (xbrl_filings_api.FilingSet method)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.symmetric_difference_update">symmetric_difference_update() (xbrl_filings_api.FilingSet method)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="T" class="genindex-section">
+  <h2>T</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.ValidationMessage.html#xbrl_filings_api.ValidationMessage.text">text (xbrl_filings_api.ValidationMessage attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.options.html#xbrl_filings_api.options.timeout_sec">timeout_sec (in module xbrl_filings_api.options)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.APIError.html#xbrl_filings_api.APIError.title">title (xbrl_filings_api.APIError attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.DownloadSpecs.to_dir">to_dir (xbrl_filings_api.downloader.DownloadSpecs attribute)</a>
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.DownloadItem.html#xbrl_filings_api.DownloadItem.to_dir">(xbrl_filings_api.DownloadItem attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="api/xbrl_filings_api.query.html#xbrl_filings_api.query.to_sqlite">to_sqlite() (in module xbrl_filings_api.query)</a>
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.to_sqlite">(xbrl_filings_api.FilingSet method)</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="dev/ref/xbrl_filings_api.json_tree.JSONTree.html#xbrl_filings_api.json_tree.JSONTree.tree">tree (xbrl_filings_api.json_tree.JSONTree attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.APIResource.html#xbrl_filings_api.APIResource.TYPE">TYPE (xbrl_filings_api.APIResource attribute)</a>
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.Entity.html#xbrl_filings_api.Entity.TYPE">(xbrl_filings_api.Entity attribute)</a>
+</li>
+          <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.TYPE">(xbrl_filings_api.Filing attribute)</a>
+</li>
+          <li><a href="api/xbrl_filings_api.ValidationMessage.html#xbrl_filings_api.ValidationMessage.TYPE">(xbrl_filings_api.ValidationMessage attribute)</a>
+</li>
+        </ul></li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="U" class="genindex-section">
+  <h2>U</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="dev/ref/xbrl_filings_api.json_tree.JSONTree.html#xbrl_filings_api.json_tree.JSONTree.unexpected_resource_types">unexpected_resource_types (xbrl_filings_api.json_tree.JSONTree attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.union">union() (xbrl_filings_api.FilingSet method)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.update">update() (xbrl_filings_api.FilingSet method)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.CorruptDownloadError.url">url (xbrl_filings_api.downloader.CorruptDownloadError attribute)</a>
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.DownloadResult.url">(xbrl_filings_api.downloader.DownloadResult attribute)</a>
+</li>
+          <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.DownloadSpecs.url">(xbrl_filings_api.downloader.DownloadSpecs attribute)</a>
+</li>
+          <li><a href="api/xbrl_filings_api.exceptions.html#xbrl_filings_api.exceptions.CorruptDownloadError.url">(xbrl_filings_api.exceptions.CorruptDownloadError attribute)</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="dev/ref/xbrl_filings_api.parse_type.ParseType.html#xbrl_filings_api.parse_type.ParseType.URL">URL (xbrl_filings_api.parse_type.ParseType attribute)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="V" class="genindex-section">
+  <h2>V</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.validate_stem_pattern">validate_stem_pattern() (in module xbrl_filings_api.downloader)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.FilingsPage.html#xbrl_filings_api.FilingsPage.validation_message_list">validation_message_list (xbrl_filings_api.FilingsPage attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.validation_messages">validation_messages (xbrl_filings_api.Filing attribute)</a>
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.validation_messages">(xbrl_filings_api.FilingSet attribute)</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.ValidationMessage.html#xbrl_filings_api.ValidationMessage">ValidationMessage (class in xbrl_filings_api)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.viewer_url">viewer_url (xbrl_filings_api.Filing attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.options.html#xbrl_filings_api.options.views">views (in module xbrl_filings_api.options)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="W" class="genindex-section">
+  <h2>W</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.warning_count">warning_count (xbrl_filings_api.Filing attribute)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="X" class="genindex-section">
+  <h2>X</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li>
+    xbrl_filings_api.constants
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.constants.html#module-xbrl_filings_api.constants">module</a>
+</li>
+        </ul></li>
+        <li>
+    xbrl_filings_api.database_processor
+
+        <ul>
+          <li><a href="dev/ref/xbrl_filings_api.database_processor.html#module-xbrl_filings_api.database_processor">module</a>
+</li>
+        </ul></li>
+        <li>
+    xbrl_filings_api.debug
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.debug.html#module-xbrl_filings_api.debug">module</a>
+</li>
+        </ul></li>
+        <li>
+    xbrl_filings_api.download_specs_construct
+
+        <ul>
+          <li><a href="dev/ref/xbrl_filings_api.download_specs_construct.html#module-xbrl_filings_api.download_specs_construct">module</a>
+</li>
+        </ul></li>
+        <li>
+    xbrl_filings_api.downloader
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.downloader.html#module-xbrl_filings_api.downloader">module</a>
+</li>
+        </ul></li>
+        <li>
+    xbrl_filings_api.downloader.stats
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.downloader.stats.html#module-xbrl_filings_api.downloader.stats">module</a>
+</li>
+        </ul></li>
+        <li>
+    xbrl_filings_api.exceptions
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.exceptions.html#module-xbrl_filings_api.exceptions">module</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li>
+    xbrl_filings_api.lang_code_transform
+
+        <ul>
+          <li><a href="dev/ref/xbrl_filings_api.lang_code_transform.html#module-xbrl_filings_api.lang_code_transform">module</a>
+</li>
+        </ul></li>
+        <li>
+    xbrl_filings_api.options
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.options.html#module-xbrl_filings_api.options">module</a>
+</li>
+        </ul></li>
+        <li>
+    xbrl_filings_api.query
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.query.html#module-xbrl_filings_api.query">module</a>
+</li>
+        </ul></li>
+        <li>
+    xbrl_filings_api.request_processor
+
+        <ul>
+          <li><a href="dev/ref/xbrl_filings_api.request_processor.html#module-xbrl_filings_api.request_processor">module</a>
+</li>
+        </ul></li>
+        <li>
+    xbrl_filings_api.stats
+
+        <ul>
+          <li><a href="api/xbrl_filings_api.stats.html#module-xbrl_filings_api.stats">module</a>
+</li>
+        </ul></li>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.xhtml_download_path">xhtml_download_path (xbrl_filings_api.Filing attribute)</a>
+</li>
+        <li><a href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.xhtml_url">xhtml_url (xbrl_filings_api.Filing attribute)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="Y" class="genindex-section">
+  <h2>Y</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.options.html#xbrl_filings_api.options.year_filter_months">year_filter_months (in module xbrl_filings_api.options)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/xbrl_filings_api.constants.html#xbrl_filings_api.constants.YearFilterMonthsType">YearFilterMonthsType (in module xbrl_filings_api.constants)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, Lauri Salmela
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=036e6a88"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

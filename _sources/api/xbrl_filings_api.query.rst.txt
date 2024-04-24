@@ -1,0 +1,12 @@
+﻿query
+=====
+
+.. automodule:: xbrl_filings_api.query
+
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      get_filings
+      to_sqlite
+      filing_page_iter

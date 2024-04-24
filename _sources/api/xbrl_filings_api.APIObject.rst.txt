@@ -1,0 +1,21 @@
+﻿APIObject
+=========
+
+.. currentmodule:: xbrl_filings_api
+
+.. autoclass:: APIObject
+
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~APIObject.__hash__
+      ~APIObject.__repr__
+      ~APIObject.__str__
+
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~APIObject.query_time
+      ~APIObject.request_url

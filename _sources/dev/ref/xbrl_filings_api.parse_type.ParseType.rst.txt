@@ -1,0 +1,16 @@
+﻿parse\_type.ParseType
+=====================
+
+.. currentmodule:: xbrl_filings_api.parse_type
+
+.. autoclass:: ParseType
+
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+
+   .. rubric:: Attributes
+
+   .. autosummary::
+   

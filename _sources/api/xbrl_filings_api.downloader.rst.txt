@@ -1,0 +1,27 @@
+﻿downloader
+==========
+
+.. automodule:: xbrl_filings_api.downloader
+
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      download
+      download_async
+      download_parallel
+      download_parallel_aiter
+      validate_stem_pattern
+
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      DownloadResult
+      DownloadSpecs
+
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      CorruptDownloadError

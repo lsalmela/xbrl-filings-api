@@ -1,0 +1,16 @@
+﻿exceptions
+==========
+
+.. automodule:: xbrl_filings_api.exceptions
+
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      FilingsAPIError
+      FilingsAPIWarning
+      CorruptDownloadError
+      DatabaseSchemaUnmatchError
+      HTTPStatusError
+      JSONAPIFormatError
+      FilterNotSupportedWarning

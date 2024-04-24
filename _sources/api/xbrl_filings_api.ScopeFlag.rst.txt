@@ -1,0 +1,18 @@
+﻿ScopeFlag
+=========
+
+.. currentmodule:: xbrl_filings_api
+
+.. autoclass:: ScopeFlag
+
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ScopeFlag.__repr__
+      ~ScopeFlag.__str__
+
+   .. rubric:: Attributes
+
+   .. autosummary::
+   

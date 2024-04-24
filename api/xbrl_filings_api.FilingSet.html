@@ -1,0 +1,1081 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Documentation for Python library xbrl-filings-api" name="description" />
+<meta content="XBRL, ESEF, IFRS" name="keywords" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="ResourceCollection" href="xbrl_filings_api.ResourceCollection.html" /><link rel="prev" title="APIError" href="xbrl_filings_api.APIError.html" />
+
+    <!-- Generated with Sphinx 7.3.7 and Furo 2024.01.29 -->
+        <title>FilingSet - xbrl-filings-api 1.0a1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">xbrl-filings-api 1.0a1 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">xbrl-filings-api 1.0a1 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reporting-date-or-last-end-date.html">Using reporting_date or last_end_date</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database.html">Database</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../api-reference.html">API reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of API reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.query.html">query</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.Filing.html">Filing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.Entity.html">Entity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.ValidationMessage.html">ValidationMessage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.APIError.html">APIError</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">FilingSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.ResourceCollection.html">ResourceCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.FilingsPage.html">FilingsPage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.APIPage.html">APIPage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.DownloadInfo.html">DownloadInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.DownloadItem.html">DownloadItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.APIObject.html">APIObject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.APIResource.html">APIResource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.SQLiteView.html">SQLiteView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.constants.html">constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.ScopeFlag.html">ScopeFlag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.DEFAULT_VIEWS.html">DEFAULT_VIEWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.exceptions.html">exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.options.html">options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.stats.html">stats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.debug.html">debug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.downloader.html">downloader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.downloader.stats.html">downloader.stats</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dev/index.html">Development</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Development</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dev/before-commit.html">Before commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev/doc-conventions.html">Documentation conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev/release-checklist.html">Release checklist</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../dev/internal-reference.html">Internal reference</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Internal reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dev/ref/xbrl_filings_api.database_processor.html">database_processor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dev/ref/xbrl_filings_api.download_info.DownloadInfo.html">download_info.DownloadInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dev/ref/xbrl_filings_api.download_specs_construct.html">download_specs_construct</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dev/ref/xbrl_filings_api.json_tree.JSONTree.html">json_tree.JSONTree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dev/ref/xbrl_filings_api.lang_code_transform.html">lang_code_transform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dev/ref/xbrl_filings_api.order_columns.order_columns.html">order_columns.order_columns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dev/ref/xbrl_filings_api.parse_type.ParseType.html">parse_type.ParseType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dev/ref/xbrl_filings_api.request_processor.html">request_processor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="filingset">
+<h1>FilingSet<a class="headerlink" href="#filingset" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xbrl_filings_api.</span></span><span class="sig-name descname"><span class="pre">FilingSet</span></span><a class="headerlink" href="#xbrl_filings_api.FilingSet" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Mutable set for <a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing" title="xbrl_filings_api.Filing"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Filing</span></code></a> objects.</p>
+<p>Can be initialized with the single argument being an iterable of
+<a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing" title="xbrl_filings_api.Filing"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Filing</span></code></a> objects. This class provides a similar but broader
+interface as builtin <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">set</span></code></a> class. All set-like operators and
+methods accept iterables instead of strict sets. This class
+implements a <a class="reference internal" href="../glossary.html#term-mutable-set"><span class="xref std std-term">mutable set</span></a> and <code class="code highlight pt python docutils literal highlight-python"><span class="nb">isinstance</span><span class="p">(</span><span class="n">filingset</span><span class="p">,</span>
+<span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">MutableSet</span><span class="p">)</span></code> is <code class="code highlight pt python docutils literal highlight-python"><span class="kc">True</span></code> (virtual subclass).</p>
+<p>In addition to set functionality it provides certain filing-related
+attributes and methods.</p>
+<p>If working with large sets, in-place operations (e.g. <a class="reference internal" href="#xbrl_filings_api.FilingSet.update" title="xbrl_filings_api.FilingSet.update"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">update</span></code></a>
+method and <code class="docutils literal notranslate"><span class="pre">|=</span></code> operator) are recommended over new set operations
+(<a class="reference internal" href="#xbrl_filings_api.FilingSet.union" title="xbrl_filings_api.FilingSet.union"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">union</span></code></a> method and <code class="docutils literal notranslate"><span class="pre">|</span></code> operator). See section <em>Notes</em>.</p>
+<p>Defines operators <code class="docutils literal notranslate"><span class="pre">|</span></code>, <code class="docutils literal notranslate"><span class="pre">|=</span></code>, <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">&amp;=</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">-=</span></code>,
+<code class="docutils literal notranslate"><span class="pre">^</span></code>, <code class="docutils literal notranslate"><span class="pre">^=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, and <code class="docutils literal notranslate"><span class="pre">!=</span></code>.
+Instead of just set-like objects, the operators accept any iterables
+of Filing objects.</p>
+<p><a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing" title="xbrl_filings_api.Filing"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Filing</span></code></a> objects, as subclass of <a class="reference internal" href="xbrl_filings_api.APIResource.html#xbrl_filings_api.APIResource" title="xbrl_filings_api.APIResource"><code class="xref any py py-class docutils literal notranslate"><span class="pre">APIResource</span></code></a>, have a custom
+<a class="reference internal" href="xbrl_filings_api.APIResource.html#xbrl_filings_api.APIResource.__hash__" title="xbrl_filings_api.APIResource.__hash__"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">__hash__()</span></code></a> method and their hash is based
+on a tuple of strings ‘APIResource’,
+<a class="reference internal" href="xbrl_filings_api.APIResource.html#xbrl_filings_api.APIResource.TYPE" title="xbrl_filings_api.APIResource.TYPE"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">Filing.TYPE</span></code></a>, and
+<a class="reference internal" href="xbrl_filings_api.APIResource.html#xbrl_filings_api.APIResource.api_id" title="xbrl_filings_api.APIResource.api_id"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">Filing.api_id</span></code></a>. This means that equality
+checks (<code class="docutils literal notranslate"><span class="pre">==</span></code> and <code class="docutils literal notranslate"><span class="pre">!=</span></code> operators) and set content uniqueness are
+based on this tuple. For example, when the actual filing object is
+not available, the fastest way to check if a filing with <code class="docutils literal notranslate"><span class="pre">api_id</span></code>
+‘123’ is included in the filing set <code class="docutils literal notranslate"><span class="pre">fs</span></code> is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="s1">&#39;APIResource&#39;</span><span class="p">,</span> <span class="n">Filing</span><span class="o">.</span><span class="n">TYPE</span><span class="p">,</span> <span class="s1">&#39;123&#39;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">fs</span>
+</pre></div>
+</div>
+<p>Same applies for <a class="reference internal" href="xbrl_filings_api.ResourceCollection.html#xbrl_filings_api.ResourceCollection" title="xbrl_filings_api.ResourceCollection"><code class="xref any py py-class docutils literal notranslate"><span class="pre">ResourceCollection</span></code></a> in attributes
+<a class="reference internal" href="#xbrl_filings_api.FilingSet.entities" title="xbrl_filings_api.FilingSet.entities"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">entities</span></code></a> and <a class="reference internal" href="#xbrl_filings_api.FilingSet.validation_messages" title="xbrl_filings_api.FilingSet.validation_messages"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">validation_messages</span></code></a>. These collections are,
+however, lazy iterators.</p>
+<div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<p>It is possible to combine filing sets from different queries into a
+single <code class="docutils literal notranslate"><span class="pre">FilingSet</span></code> without redundant copies of objects. Due to
+cross-referencing, the operations returning a new set always deep
+copy all objects to the results set. The in-place operations retain
+the objects from the left set but deep copy everything from the
+right set.</p>
+<p>As the operators work on an iterable basis, for example the <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>
+operator or <a class="reference internal" href="#xbrl_filings_api.FilingSet.issuperset" title="xbrl_filings_api.FilingSet.issuperset"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">issuperset()</span></code></a> method returns True for a FilingSet and
+any iterable with the same Filings but is undefined if the iterable
+contains any item other than a filing. However, operators <code class="docutils literal notranslate"><span class="pre">==</span></code> and
+<code class="docutils literal notranslate"><span class="pre">!=</span></code> are never undefined.</p>
+</div>
+<p class="rubric">Methods</p>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.add" title="xbrl_filings_api.FilingSet.add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add</span></code></a>(elem)</p></td>
+<td><p>Add and update cross-references.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.clear" title="xbrl_filings_api.FilingSet.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a>()</p></td>
+<td><p>Clear the filing set of filings.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.copy" title="xbrl_filings_api.FilingSet.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
+<td><p>Return shallow copy of FilingSet.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.difference" title="xbrl_filings_api.FilingSet.difference"><code class="xref py py-obj docutils literal notranslate"><span class="pre">difference</span></code></a>(*others)</p></td>
+<td><p>Return difference FilingSet and update cross-references.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.difference_update" title="xbrl_filings_api.FilingSet.difference_update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">difference_update</span></code></a>(*others)</p></td>
+<td><p>Apply difference to self and update cross-references.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.discard" title="xbrl_filings_api.FilingSet.discard"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discard</span></code></a>(elem)</p></td>
+<td><p>Discard and update cross-references.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.download" title="xbrl_filings_api.FilingSet.download"><code class="xref py py-obj docutils literal notranslate"><span class="pre">download</span></code></a>(files[, to_dir, stem_pattern, ...])</p></td>
+<td><p>Download files according to parameter <code class="docutils literal notranslate"><span class="pre">files</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.download_aiter" title="xbrl_filings_api.FilingSet.download_aiter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">download_aiter</span></code></a>(files[, to_dir, ...])</p></td>
+<td><p>Download files and yield <a class="reference internal" href="xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.DownloadResult" title="xbrl_filings_api.downloader.DownloadResult"><code class="xref any py py-class docutils literal notranslate"><span class="pre">DownloadResult</span></code></a> objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.get_pandas_data" title="xbrl_filings_api.FilingSet.get_pandas_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_pandas_data</span></code></a>([attr_names, with_entity, ...])</p></td>
+<td><p>Get filings as data for <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> constructor.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.intersection" title="xbrl_filings_api.FilingSet.intersection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">intersection</span></code></a>(*others)</p></td>
+<td><p>Return intersection FilingSet and update cross-references.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.intersection_update" title="xbrl_filings_api.FilingSet.intersection_update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">intersection_update</span></code></a>(*others)</p></td>
+<td><p>Apply intersection in self and update cross-references.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.isdisjoint" title="xbrl_filings_api.FilingSet.isdisjoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isdisjoint</span></code></a>(other)</p></td>
+<td><p>Return True if two filing sets have a null intersection.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.issubset" title="xbrl_filings_api.FilingSet.issubset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">issubset</span></code></a>(other)</p></td>
+<td><p>Report whether another filing set contains this set.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.issuperset" title="xbrl_filings_api.FilingSet.issuperset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">issuperset</span></code></a>(other)</p></td>
+<td><p>Report whether this set contains another filing set.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.pop" title="xbrl_filings_api.FilingSet.pop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pop</span></code></a>()</p></td>
+<td><p>Remove a filing, return it, and update cross-references.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.pop_duplicates" title="xbrl_filings_api.FilingSet.pop_duplicates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pop_duplicates</span></code></a>([languages, ...])</p></td>
+<td><p>Pops duplicates of the same enclosure from the set of filings.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.remove" title="xbrl_filings_api.FilingSet.remove"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove</span></code></a>(elem)</p></td>
+<td><p>Remove and update cross-references.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.symmetric_difference" title="xbrl_filings_api.FilingSet.symmetric_difference"><code class="xref py py-obj docutils literal notranslate"><span class="pre">symmetric_difference</span></code></a>(other)</p></td>
+<td><p>Return symmetric difference and update cross-references.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.symmetric_difference_update" title="xbrl_filings_api.FilingSet.symmetric_difference_update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">symmetric_difference_update</span></code></a>(other)</p></td>
+<td><p>Apply symmetric difference in self and update cross-refs.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.to_sqlite" title="xbrl_filings_api.FilingSet.to_sqlite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_sqlite</span></code></a>(path, *[, update, flags])</p></td>
+<td><p>Save set to an SQLite3 database.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.union" title="xbrl_filings_api.FilingSet.union"><code class="xref py py-obj docutils literal notranslate"><span class="pre">union</span></code></a>(*others)</p></td>
+<td><p>Return union FilingSet and update cross-references.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.update" title="xbrl_filings_api.FilingSet.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a>(*others)</p></td>
+<td><p>Apply union in self and update cross-references.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.__repr__" title="xbrl_filings_api.FilingSet.__repr__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__repr__</span></code></a>()</p></td>
+<td><p>Return repr with len() of self, entities, validation_messages.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__str__</span></code>()</p></td>
+<td><p>Return str(self).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Attributes</p>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.columns" title="xbrl_filings_api.FilingSet.columns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">columns</span></code></a></p></td>
+<td><p>List of available columns for filings of this set.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.entities" title="xbrl_filings_api.FilingSet.entities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">entities</span></code></a></p></td>
+<td><p>Lazy iterator for entity references in filings.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.validation_messages" title="xbrl_filings_api.FilingSet.validation_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validation_messages</span></code></a></p></td>
+<td><p>Lazy iterator for validation message references in filings.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#xbrl_filings_api.FilingSet.__hash__" title="xbrl_filings_api.FilingSet.__hash__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__hash__</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.entities">
+<span class="sig-name descname"><span class="pre">entities</span></span><a class="headerlink" href="#xbrl_filings_api.FilingSet.entities" title="Link to this definition">¶</a></dt>
+<dd><p>Lazy iterator for entity references in filings.</p>
+<p>See documentation for <a class="reference internal" href="xbrl_filings_api.ResourceCollection.html#xbrl_filings_api.ResourceCollection" title="xbrl_filings_api.ResourceCollection"><code class="xref any py py-class docutils literal notranslate"><span class="pre">ResourceCollection</span></code></a> class.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.validation_messages">
+<span class="sig-name descname"><span class="pre">validation_messages</span></span><a class="headerlink" href="#xbrl_filings_api.FilingSet.validation_messages" title="Link to this definition">¶</a></dt>
+<dd><p>Lazy iterator for validation message references in filings.</p>
+<p>See documentation for <a class="reference internal" href="xbrl_filings_api.ResourceCollection.html#xbrl_filings_api.ResourceCollection" title="xbrl_filings_api.ResourceCollection"><code class="xref any py py-class docutils literal notranslate"><span class="pre">ResourceCollection</span></code></a> class.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.columns">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">columns</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#xbrl_filings_api.FilingSet.columns" title="Link to this definition">¶</a></dt>
+<dd><p>List of available columns for filings of this set.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.download">
+<span class="sig-name descname"><span class="pre">download</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">files</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stem_pattern</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_corruption</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_concurrent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xbrl_filings_api.FilingSet.download" title="Link to this definition">¶</a></dt>
+<dd><p>Download files according to parameter <code class="docutils literal notranslate"><span class="pre">files</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">files</span></code> parameter accepts three formats:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;json&#39;</span><span class="p">)</span>
+<span class="n">fs</span><span class="o">.</span><span class="n">download</span><span class="p">([</span><span class="s1">&#39;json&#39;</span><span class="p">,</span> <span class="s1">&#39;package&#39;</span><span class="p">])</span>
+<span class="n">fs</span><span class="o">.</span><span class="n">download</span><span class="p">({</span>
+        <span class="s1">&#39;json&#39;</span><span class="p">:</span> <span class="n">DownloadItem</span><span class="p">(),</span>
+        <span class="s1">&#39;package&#39;</span><span class="p">:</span> <span class="n">DownloadItem</span><span class="p">(</span><span class="n">to_dir</span><span class="o">=</span><span class="n">other_dir</span><span class="p">)</span>
+    <span class="p">},</span> <span class="n">to_dir</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The filesystem path of the downloaded file will be saved in the
+<a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing" title="xbrl_filings_api.Filing"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Filing</span></code></a> object attributes <code class="docutils literal notranslate"><span class="pre">&lt;file&gt;_download_path</span></code> such as
+<code class="docutils literal notranslate"><span class="pre">json_download_path</span></code> for the downloaded JSON file.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">package</span></code> files are requested to be downloaded and
+parameter <code class="docutils literal notranslate"><span class="pre">check_corruption</span></code> is <code class="code highlight pt python docutils literal highlight-python"><span class="kc">True</span></code>, the downloaded
+package files will be checked through the <a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.package_sha256" title="xbrl_filings_api.Filing.package_sha256"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">package_sha256</span></code></a>
+attribute. If these attribute values do not match the ones
+calculated from the downloaded files, an exception
+<a class="reference internal" href="xbrl_filings_api.exceptions.html#xbrl_filings_api.exceptions.CorruptDownloadError" title="xbrl_filings_api.exceptions.CorruptDownloadError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">CorruptDownloadError</span></code></a> of the
+first corrupt file is raised after all downloads have finished.
+The downloaded files will not be deleted but the filenames will
+be appended with ending “.corrupt”. However, attributes
+<a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.package_download_path" title="xbrl_filings_api.Filing.package_download_path"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">Filing.package_download_path</span></code></a> will not store these corrupt
+paths.</p>
+<p>The directories in the path of parameter <code class="docutils literal notranslate"><span class="pre">to_dir</span></code> will be
+created if they do not exist. By default, filename is derived
+from download URL. If the file already exists, it will be
+overwritten.</p>
+<p>If download is interrupted, the files will be left with ending
+“.unfinished”.</p>
+<p>If no name could be derived from the url attribute, the file
+will be named <code class="docutils literal notranslate"><span class="pre">file0001</span></code>, <code class="docutils literal notranslate"><span class="pre">file0002</span></code>, etc. In this case a
+new file is always created.</p>
+<p>Parameter <code class="docutils literal notranslate"><span class="pre">stem_pattern</span></code> requires a placeholder “/name/”.
+For example pattern <code class="docutils literal notranslate"><span class="pre">/name/_second_try</span></code> will change original
+filename <code class="docutils literal notranslate"><span class="pre">743700XJC24THUPK0S03-2022-12-31-fi.xhtml</span></code> into
+<code class="docutils literal notranslate"><span class="pre">743700XJC24THUPK0S03-2022-12-31-fi_second_try.xhtml</span></code>. Not
+recommended for packages as their names should not be changed.</p>
+<p>HTTP request timeout is defined in <a class="reference internal" href="xbrl_filings_api.options.html#xbrl_filings_api.options.timeout_sec" title="xbrl_filings_api.options.timeout_sec"><code class="xref any py py-data docutils literal notranslate"><span class="pre">options.timeout_sec</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>files</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> or </em><em>iterable</em><em> of </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> or </em><em>mapping</em><em> of </em><em>{str: DownloadItem}</em>) – All of the <code class="docutils literal notranslate"><span class="pre">str</span></code> values in annotation are <a class="reference internal" href="xbrl_filings_api.constants.html#xbrl_filings_api.constants.FileStringType" title="xbrl_filings_api.constants.FileStringType"><code class="xref any py py-data docutils literal notranslate"><span class="pre">FileStringType</span></code></a>
+literals. <a class="reference internal" href="xbrl_filings_api.DownloadItem.html#xbrl_filings_api.DownloadItem" title="xbrl_filings_api.DownloadItem"><code class="xref any py py-class docutils literal notranslate"><span class="pre">DownloadItem</span></code></a> attributes override method
+arguments for the file.</p></li>
+<li><p><strong>to_dir</strong> (<em>path-like</em><em>, </em><em>optional</em>) – Directory to save the files. Defaults to working directory.</p></li>
+<li><p><strong>stem_pattern</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>, </em><em>optional</em>) – Pattern to add to the filename stems. Placeholder “/name/”
+is always required.</p></li>
+<li><p><strong>check_corruption</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a><em>, </em><em>default True</em>) – Raise
+<a class="reference internal" href="xbrl_filings_api.exceptions.html#xbrl_filings_api.exceptions.CorruptDownloadError" title="xbrl_filings_api.exceptions.CorruptDownloadError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">CorruptDownloadError</span></code></a> for
+any corrupt <code class="docutils literal notranslate"><span class="pre">'package'</span></code> file.</p></li>
+<li><p><strong>max_concurrent</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a><em> or </em><em>None</em><em>, </em><em>default 5</em>) – Maximum number of simultaneous downloads allowed. Value
+<code class="code highlight pt python docutils literal highlight-python"><span class="kc">None</span></code> means unlimited.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="xbrl_filings_api.exceptions.html#xbrl_filings_api.exceptions.CorruptDownloadError" title="xbrl_filings_api.exceptions.CorruptDownloadError"><strong>CorruptDownloadError</strong></a> – When attribute <a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.package_sha256" title="xbrl_filings_api.Filing.package_sha256"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">Filing.package_sha256</span></code></a> does not match the
+    calculated hash of <code class="docutils literal notranslate"><span class="pre">'package'</span></code> file and
+    <code class="docutils literal notranslate"><span class="pre">check_corruption</span></code> is <code class="code highlight pt python docutils literal highlight-python"><span class="kc">True</span></code>.</p></li>
+<li><p><a class="reference external" href="https://requests.readthedocs.io/en/latest/api/#requests.HTTPError" title="(in Requests v2.31.0)"><strong>requests.HTTPError</strong></a> – When HTTP status error occurs.</p></li>
+<li><p><a class="reference external" href="https://requests.readthedocs.io/en/latest/api/#requests.ConnectionError" title="(in Requests v2.31.0)"><strong>requests.ConnectionError</strong></a> – When connection fails.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.download" title="xbrl_filings_api.Filing.download"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Filing.download</span></code></a></dt><dd><p>For a single filing.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.download_aiter">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">download_aiter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">files</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stem_pattern</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_corruption</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_concurrent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xbrl_filings_api.FilingSet.download_aiter" title="Link to this definition">¶</a></dt>
+<dd><p>Download files and yield <a class="reference internal" href="xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.DownloadResult" title="xbrl_filings_api.downloader.DownloadResult"><code class="xref any py py-class docutils literal notranslate"><span class="pre">DownloadResult</span></code></a> objects.</p>
+<p>The function follows the same logic as method <a class="reference internal" href="#xbrl_filings_api.FilingSet.download" title="xbrl_filings_api.FilingSet.download"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">download()</span></code></a>. See
+documentation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>files</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> or </em><em>iterable</em><em> of </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> or </em><em>mapping</em><em> of </em><em>{str: DownloadItem}</em>) – All of the <code class="docutils literal notranslate"><span class="pre">str</span></code> values in annotation are <a class="reference internal" href="xbrl_filings_api.constants.html#xbrl_filings_api.constants.FileStringType" title="xbrl_filings_api.constants.FileStringType"><code class="xref any py py-data docutils literal notranslate"><span class="pre">FileStringType</span></code></a>
+literals. <a class="reference internal" href="xbrl_filings_api.DownloadItem.html#xbrl_filings_api.DownloadItem" title="xbrl_filings_api.DownloadItem"><code class="xref any py py-class docutils literal notranslate"><span class="pre">DownloadItem</span></code></a> attributes override method
+arguments for the file.</p></li>
+<li><p><strong>to_dir</strong> (<em>path-like</em><em>, </em><em>optional</em>) – Directory to save the files. Defaults to working directory.</p></li>
+<li><p><strong>stem_pattern</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>, </em><em>optional</em>) – Pattern to add to the filename stems. Placeholder “/name/”
+is always required.</p></li>
+<li><p><strong>check_corruption</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a><em>, </em><em>default True</em>) – Raise
+<a class="reference internal" href="xbrl_filings_api.exceptions.html#xbrl_filings_api.exceptions.CorruptDownloadError" title="xbrl_filings_api.exceptions.CorruptDownloadError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">CorruptDownloadError</span></code></a> for
+any corrupt <code class="docutils literal notranslate"><span class="pre">'package'</span></code> file.</p></li>
+<li><p><strong>max_concurrent</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a><em> or </em><em>None</em><em>, </em><em>default 5</em>) – Maximum number of simultaneous downloads allowed. Value
+<code class="code highlight pt python docutils literal highlight-python"><span class="kc">None</span></code> means unlimited.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Yields<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>DownloadResult</em> – Contains information on the finished download.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.AsyncIterator" title="(in Python v3.12)"><em>AsyncIterator</em></a>[<a class="reference internal" href="xbrl_filings_api.downloader.html#xbrl_filings_api.downloader.DownloadResult" title="xbrl_filings_api.downloader.download_result.DownloadResult"><em>DownloadResult</em></a>]</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.download_aiter" title="xbrl_filings_api.Filing.download_aiter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Filing.download_aiter</span></code></a></dt><dd><p>For a single filing.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.get_pandas_data">
+<span class="sig-name descname"><span class="pre">get_pandas_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attr_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_entity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strip_timezone</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_as_datetime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_urls</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_paths</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xbrl_filings_api.FilingSet.get_pandas_data" title="Link to this definition">¶</a></dt>
+<dd><p>Get filings as data for <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> constructor.</p>
+<p>A new dataframe can be instantiated by:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">filingset</span><span class="o">.</span><span class="n">get_pandas_data</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>If parameter <code class="docutils literal notranslate"><span class="pre">attr_names</span></code> is not given, data attributes
+excluding ones ending <code class="docutils literal notranslate"><span class="pre">_date_str</span></code> will be extracted.
+Attributes ending in <code class="docutils literal notranslate"><span class="pre">_download_path</span></code> will be extracted only
+if at least one file of this type has been downloaded (and
+<code class="docutils literal notranslate"><span class="pre">include_paths</span></code> is <code class="code highlight pt python docutils literal highlight-python"><span class="kc">True</span></code>) and <a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.entity_api_id" title="xbrl_filings_api.Filing.entity_api_id"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">entity_api_id</span></code></a> if there is
+at least one entity object in the set and parameter
+<code class="docutils literal notranslate"><span class="pre">with_entity</span></code> is <code class="code highlight pt python docutils literal highlight-python"><span class="kc">False</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attr_names</strong> (<em>iterable</em><em> of </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>, </em><em>optional</em>) – Valid attributes names of <a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing" title="xbrl_filings_api.Filing"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Filing</span></code></a> object or <code class="docutils literal notranslate"><span class="pre">entity.</span></code>
+prefixed attributes of its <a class="reference internal" href="xbrl_filings_api.Entity.html#xbrl_filings_api.Entity" title="xbrl_filings_api.Entity"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Entity</span></code></a> object.</p></li>
+<li><p><strong>with_entity</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a><em>, </em><em>default False</em>) – When parameter <code class="docutils literal notranslate"><span class="pre">attr_names</span></code> is not given, include entity
+attributes to the filing.</p></li>
+<li><p><strong>strip_timezone</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a><em>, </em><em>default True</em>) – Strip timezone information (always UTC) from
+<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a> values.</p></li>
+<li><p><strong>date_as_datetime</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a><em>, </em><em>default True</em>) – Convert <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.date" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">date</span></code></a> values to naive
+<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a> to be converted to
+<code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.datetime64</span></code> by pandas.</p></li>
+<li><p><strong>include_urls</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a><em>, </em><em>default False</em>) – When parameter <code class="docutils literal notranslate"><span class="pre">attr_names</span></code> is not given, include
+attributes ending <code class="docutils literal notranslate"><span class="pre">_url</span></code>.</p></li>
+<li><p><strong>include_paths</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a><em>, </em><em>default False</em>) – When parameter <code class="docutils literal notranslate"><span class="pre">attr_names</span></code> is not given, include
+attributes ending <code class="docutils literal notranslate"><span class="pre">_path</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>data</strong> – Column names are the same as the attributes for resource of
+this type.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)">dict</a> of {str: list of DataAttributeType}</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="xbrl_filings_api.ResourceCollection.html#xbrl_filings_api.ResourceCollection.get_pandas_data" title="xbrl_filings_api.ResourceCollection.get_pandas_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ResourceCollection.get_pandas_data</span></code></a></dt><dd><p>For other resources.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.pop_duplicates">
+<span class="sig-name descname"><span class="pre">pop_duplicates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">languages</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['en']</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_reporting_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_markets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xbrl_filings_api.FilingSet.pop_duplicates" title="Link to this definition">¶</a></dt>
+<dd><p>Pops duplicates of the same enclosure from the set of filings.</p>
+<p>Entities must be available on the <a class="reference internal" href="#xbrl_filings_api.FilingSet" title="xbrl_filings_api.FilingSet"><code class="xref any py py-class docutils literal notranslate"><span class="pre">FilingSet</span></code></a>.</p>
+<p>The method searches the <code class="docutils literal notranslate"><span class="pre">FilingSet</span></code> and leaves only one filing
+for each group of same <a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.entity_api_id" title="xbrl_filings_api.Filing.entity_api_id"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">entity_api_id</span></code></a>, <a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.last_end_date" title="xbrl_filings_api.Filing.last_end_date"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">last_end_date</span></code></a> pairs,
+i.e., one filing for each unique enclosure of the same entity
+for the same financial period. If parameter
+<code class="docutils literal notranslate"><span class="pre">use_reporting_date</span></code> is <code class="code highlight pt python docutils literal highlight-python"><span class="kc">True</span></code>, grouping is based on
+<code class="docutils literal notranslate"><span class="pre">entity_api_id</span></code>, <a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.reporting_date" title="xbrl_filings_api.Filing.reporting_date"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">reporting_date</span></code></a> instead.</p>
+<p>Some entities report on multiple markets. If all these
+country-specific filings are wished to retain, set parameter
+<code class="docutils literal notranslate"><span class="pre">all_markets</span></code> as <code class="code highlight pt python docutils literal highlight-python"><span class="kc">True</span></code>. Grouping will then also include
+<a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.country" title="xbrl_filings_api.Filing.country"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">country</span></code></a> as the last item.</p>
+<p>The selected filing from the group is chosen primarily on
+<code class="docutils literal notranslate"><span class="pre">languages</span></code> parameter values matched on the <a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.language" title="xbrl_filings_api.Filing.language"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">Filing.language</span></code></a>
+attribute. Parameter value <code class="docutils literal notranslate"><span class="pre">['sv',</span> <span class="pre">'fi']</span></code> thus means that
+Swedish filings are preferred, secondarily Finnish, and lastly
+the ones which have language as <code class="code highlight pt python docutils literal highlight-python"><span class="kc">None</span></code>. Value <code class="code highlight pt python docutils literal highlight-python"><span class="kc">None</span></code> can
+be used in the iterable as well. Parameter value <code class="code highlight pt python docutils literal highlight-python"><span class="kc">None</span></code>
+means no language preference.</p>
+<p>If there are more than one filing for the language match (or
+<code class="docutils literal notranslate"><span class="pre">language</span></code> is <code class="code highlight pt python docutils literal highlight-python"><span class="kc">None</span></code>), the filings will be ordered based
+on their <a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.filing_index" title="xbrl_filings_api.Filing.filing_index"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">filing_index</span></code></a> and the last one is chosen which is
+practically the one with highest filing number part of
+<code class="docutils literal notranslate"><span class="pre">filing_index</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>languages</strong> (<em>iterable</em><em> of </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> or </em><em>None</em><em>, </em><em>default</em><em> [</em><em>'en'</em><em>]</em>) – Preferred languages for the retained filing.</p></li>
+<li><p><strong>use_reporting_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a><em>, </em><em>default False</em>) – Use <a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.reporting_date" title="xbrl_filings_api.Filing.reporting_date"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">reporting_date</span></code></a> instead of <a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.last_end_date" title="xbrl_filings_api.Filing.last_end_date"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">last_end_date</span></code></a> when
+grouping.</p></li>
+<li><p><strong>all_markets</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a><em>, </em><em>default False</em>) – Append <a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.country" title="xbrl_filings_api.Filing.country"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">country</span></code></a> as the last item in grouping.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The set of removed filings.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#xbrl_filings_api.FilingSet" title="xbrl_filings_api.FilingSet">FilingSet</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.to_sqlite">
+<span class="sig-name descname"><span class="pre">to_sqlite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags=&lt;ScopeFlag.GET_ENTITY|GET_VALIDATION_MESSAGES:</span> <span class="pre">6&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xbrl_filings_api.FilingSet.to_sqlite" title="Link to this definition">¶</a></dt>
+<dd><p>Save set to an SQLite3 database.</p>
+<p>The method has the same signature and follows the same rules as
+the query function <a class="reference internal" href="xbrl_filings_api.query.html#xbrl_filings_api.query.to_sqlite" title="xbrl_filings_api.query.to_sqlite"><code class="xref py py-func docutils literal notranslate"><span class="pre">to_sqlite()</span></code></a>
+with the exception of missing all query parameters.</p>
+<p>Flags also default to all tables turned on. If no additional
+information is present in the set, the tables will not be
+created if they do not exist.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>path-like</em>) – Path to the SQLite database.</p></li>
+<li><p><strong>update</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a><em>, </em><em>default False</em>) – If the database already exists, update it with these
+records. Old records are updated and new ones are added.</p></li>
+<li><p><strong>flags</strong> (<a class="reference internal" href="xbrl_filings_api.ScopeFlag.html#xbrl_filings_api.ScopeFlag" title="xbrl_filings_api.ScopeFlag"><em>ScopeFlag</em></a><em>, </em><em>default GET_ENTITY</em><em> | </em><em>GET_VALIDATION_MESSAGES</em>) – Scope of saving. Flag <a class="reference internal" href="xbrl_filings_api.ScopeFlag.html#xbrl_filings_api.ScopeFlag.GET_ENTITY" title="xbrl_filings_api.ScopeFlag.GET_ENTITY"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">GET_ENTITY</span></code></a> will save entity records
+of filings and <a class="reference internal" href="xbrl_filings_api.ScopeFlag.html#xbrl_filings_api.ScopeFlag.GET_VALIDATION_MESSAGES" title="xbrl_filings_api.ScopeFlag.GET_VALIDATION_MESSAGES"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">GET_VALIDATION_MESSAGES</span></code></a> the validation
+messages.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#FileExistsError" title="(in Python v3.12)"><strong>FileExistsError</strong></a> – When <code class="docutils literal notranslate"><span class="pre">update</span></code> is <code class="code highlight pt python docutils literal highlight-python"><span class="kc">False</span></code> and the intended save path
+    for the database is an existing file.</p></li>
+<li><p><a class="reference internal" href="xbrl_filings_api.exceptions.html#xbrl_filings_api.exceptions.DatabaseSchemaUnmatchError" title="xbrl_filings_api.exceptions.DatabaseSchemaUnmatchError"><strong>DatabaseSchemaUnmatchError</strong></a> – When <code class="docutils literal notranslate"><span class="pre">update</span></code> is <code class="code highlight pt python docutils literal highlight-python"><span class="kc">True</span></code> and the file contains a
+    database whose schema does not match the expected format.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/sqlite3.html#sqlite3.DatabaseError" title="(in Python v3.12)"><strong>sqlite3.DatabaseError</strong></a> – For example when <code class="docutils literal notranslate"><span class="pre">update</span></code> is <code class="code highlight pt python docutils literal highlight-python"><span class="kc">True</span></code> and the file is
+    not a database etc.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">xbrl_filings_api.to_sqlite</span></code></dt><dd><p>Query and save to SQLite.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xbrl_filings_api.FilingSet.__repr__" title="Link to this definition">¶</a></dt>
+<dd><p>Return repr with len() of self, entities, validation_messages.</p>
+<p>Values len(<a class="reference internal" href="#xbrl_filings_api.FilingSet.entities" title="xbrl_filings_api.FilingSet.entities"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">entities</span></code></a>) and len(<a class="reference internal" href="#xbrl_filings_api.FilingSet.validation_messages" title="xbrl_filings_api.FilingSet.validation_messages"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">validation_messages</span></code></a>) are only
+shown if more than zero are present.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xbrl_filings_api.FilingSet.clear" title="Link to this definition">¶</a></dt>
+<dd><p>Clear the filing set of filings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.union">
+<span class="sig-name descname"><span class="pre">union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xbrl_filings_api.FilingSet.union" title="Link to this definition">¶</a></dt>
+<dd><p>Return union FilingSet and update cross-references.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>*others</strong> (<em>iterable</em><em> of </em><a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing" title="xbrl_filings_api.Filing"><em>Filing</em></a>) – One or more arguments of <code class="docutils literal notranslate"><span class="pre">Filing</span></code> iterables.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new set which has filings of this set and all <code class="docutils literal notranslate"><span class="pre">others</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#xbrl_filings_api.FilingSet" title="xbrl_filings_api.FilingSet">FilingSet</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – When any item in an iterable is not <code class="docutils literal notranslate"><span class="pre">Filing</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xbrl_filings_api.FilingSet.update" title="Link to this definition">¶</a></dt>
+<dd><p>Apply union in self and update cross-references.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>*others</strong> (<em>iterable</em><em> of </em><a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing" title="xbrl_filings_api.Filing"><em>Filing</em></a>) – One or more arguments of <code class="docutils literal notranslate"><span class="pre">Filing</span></code> iterables.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – When any item in an iterable is not <code class="docutils literal notranslate"><span class="pre">Filing</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.intersection">
+<span class="sig-name descname"><span class="pre">intersection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xbrl_filings_api.FilingSet.intersection" title="Link to this definition">¶</a></dt>
+<dd><p>Return intersection FilingSet and update cross-references.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>*others</strong> (<em>iterable</em><em> of </em><a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing" title="xbrl_filings_api.Filing"><em>Filing</em></a>) – One or more arguments of <code class="docutils literal notranslate"><span class="pre">Filing</span></code> iterables.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new set which has filings common with this set and any set
+in <code class="docutils literal notranslate"><span class="pre">others</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#xbrl_filings_api.FilingSet" title="xbrl_filings_api.FilingSet">FilingSet</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – When any item in an iterable is not <code class="docutils literal notranslate"><span class="pre">Filing</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.intersection_update">
+<span class="sig-name descname"><span class="pre">intersection_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xbrl_filings_api.FilingSet.intersection_update" title="Link to this definition">¶</a></dt>
+<dd><p>Apply intersection in self and update cross-references.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>*others</strong> (<em>iterable</em><em> of </em><a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing" title="xbrl_filings_api.Filing"><em>Filing</em></a>) – One or more arguments of <code class="docutils literal notranslate"><span class="pre">Filing</span></code> iterables.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – When any item in an iterable is not <code class="docutils literal notranslate"><span class="pre">Filing</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.difference">
+<span class="sig-name descname"><span class="pre">difference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xbrl_filings_api.FilingSet.difference" title="Link to this definition">¶</a></dt>
+<dd><p>Return difference FilingSet and update cross-references.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>*others</strong> (<em>iterable</em><em> of </em><a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing" title="xbrl_filings_api.Filing"><em>Filing</em></a>) – One or more arguments of <code class="docutils literal notranslate"><span class="pre">Filing</span></code> iterables.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new set which is this set without filings in all
+<code class="docutils literal notranslate"><span class="pre">others</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#xbrl_filings_api.FilingSet" title="xbrl_filings_api.FilingSet">FilingSet</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – When any item in an iterable is not <code class="docutils literal notranslate"><span class="pre">Filing</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.difference_update">
+<span class="sig-name descname"><span class="pre">difference_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xbrl_filings_api.FilingSet.difference_update" title="Link to this definition">¶</a></dt>
+<dd><p>Apply difference to self and update cross-references.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>*others</strong> (<em>iterable</em><em> of </em><a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing" title="xbrl_filings_api.Filing"><em>Filing</em></a>) – One or more arguments of <code class="docutils literal notranslate"><span class="pre">Filing</span></code> iterables.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – When any item in an iterable is not <code class="docutils literal notranslate"><span class="pre">Filing</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.symmetric_difference">
+<span class="sig-name descname"><span class="pre">symmetric_difference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xbrl_filings_api.FilingSet.symmetric_difference" title="Link to this definition">¶</a></dt>
+<dd><p>Return symmetric difference and update cross-references.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<em>iterable</em><em> of </em><a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing" title="xbrl_filings_api.Filing"><em>Filing</em></a>) – An iterable of <code class="docutils literal notranslate"><span class="pre">Filing</span></code> objects.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new set which has filings in this set or <code class="docutils literal notranslate"><span class="pre">other</span></code> but not
+in both.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#xbrl_filings_api.FilingSet" title="xbrl_filings_api.FilingSet">FilingSet</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – When any item in parameter <code class="docutils literal notranslate"><span class="pre">other</span></code> is not <code class="docutils literal notranslate"><span class="pre">Filing</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.symmetric_difference_update">
+<span class="sig-name descname"><span class="pre">symmetric_difference_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xbrl_filings_api.FilingSet.symmetric_difference_update" title="Link to this definition">¶</a></dt>
+<dd><p>Apply symmetric difference in self and update cross-refs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>*others</strong> (<em>iterable</em><em> of </em><a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing" title="xbrl_filings_api.Filing"><em>Filing</em></a>) – One or more arguments of <code class="docutils literal notranslate"><span class="pre">Filing</span></code> iterables.</p></li>
+<li><p><strong>other</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.12)"><em>Iterable</em></a><em>[</em><a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing" title="xbrl_filings_api.filing.Filing"><em>Filing</em></a><em>]</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – When any item in an iterable is not <code class="docutils literal notranslate"><span class="pre">Filing</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elem</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xbrl_filings_api.FilingSet.add" title="Link to this definition">¶</a></dt>
+<dd><p>Add and update cross-references.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>elem</strong> (<a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing" title="xbrl_filings_api.filing.Filing"><em>Filing</em></a>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.discard">
+<span class="sig-name descname"><span class="pre">discard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elem</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xbrl_filings_api.FilingSet.discard" title="Link to this definition">¶</a></dt>
+<dd><p>Discard and update cross-references.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>elem</strong> (<a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing" title="xbrl_filings_api.filing.Filing"><em>Filing</em></a>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.remove">
+<span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elem</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xbrl_filings_api.FilingSet.remove" title="Link to this definition">¶</a></dt>
+<dd><p>Remove and update cross-references.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>elem</strong> (<a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing" title="xbrl_filings_api.filing.Filing"><em>Filing</em></a>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.pop">
+<span class="sig-name descname"><span class="pre">pop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xbrl_filings_api.FilingSet.pop" title="Link to this definition">¶</a></dt>
+<dd><p>Remove a filing, return it, and update cross-references.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing" title="xbrl_filings_api.filing.Filing"><em>Filing</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xbrl_filings_api.FilingSet.copy" title="Link to this definition">¶</a></dt>
+<dd><p>Return shallow copy of FilingSet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#xbrl_filings_api.FilingSet" title="xbrl_filings_api.filing_set.FilingSet"><em>FilingSet</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.isdisjoint">
+<span class="sig-name descname"><span class="pre">isdisjoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xbrl_filings_api.FilingSet.isdisjoint" title="Link to this definition">¶</a></dt>
+<dd><p>Return True if two filing sets have a null intersection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<em>iterable</em><em> of </em><a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing" title="xbrl_filings_api.Filing"><em>Filing</em></a>) – An iterable of <code class="docutils literal notranslate"><span class="pre">Filing</span></code> objects.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if there are no common filings in the two sets.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)">bool</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – When any item in an iterable is not <code class="docutils literal notranslate"><span class="pre">Filing</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.issubset">
+<span class="sig-name descname"><span class="pre">issubset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xbrl_filings_api.FilingSet.issubset" title="Link to this definition">¶</a></dt>
+<dd><p>Report whether another filing set contains this set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<em>iterable</em><em> of </em><a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing" title="xbrl_filings_api.Filing"><em>Filing</em></a>) – An iterable of <code class="docutils literal notranslate"><span class="pre">Filing</span></code> objects.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if <code class="docutils literal notranslate"><span class="pre">other</span></code> contains all filings in this set.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)">bool</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – When any item in an iterable is not <code class="docutils literal notranslate"><span class="pre">Filing</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.issuperset">
+<span class="sig-name descname"><span class="pre">issuperset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xbrl_filings_api.FilingSet.issuperset" title="Link to this definition">¶</a></dt>
+<dd><p>Report whether this set contains another filing set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<em>iterable</em><em> of </em><a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing" title="xbrl_filings_api.Filing"><em>Filing</em></a>) – An iterable of <code class="docutils literal notranslate"><span class="pre">Filing</span></code> objects.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if this set contains all filings in <code class="docutils literal notranslate"><span class="pre">other</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)">bool</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – When any item in an iterable is not <code class="docutils literal notranslate"><span class="pre">Filing</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="xbrl_filings_api.FilingSet.__hash__">
+<span class="sig-name descname"><span class="pre">__hash__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#xbrl_filings_api.FilingSet.__hash__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="xbrl_filings_api.ResourceCollection.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">ResourceCollection</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="xbrl_filings_api.APIError.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">APIError</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, Lauri Salmela
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">FilingSet</a><ul>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet"><code class="docutils literal notranslate"><span class="pre">FilingSet</span></code></a><ul>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.entities"><code class="docutils literal notranslate"><span class="pre">FilingSet.entities</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.validation_messages"><code class="docutils literal notranslate"><span class="pre">FilingSet.validation_messages</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.columns"><code class="docutils literal notranslate"><span class="pre">FilingSet.columns</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.download"><code class="docutils literal notranslate"><span class="pre">FilingSet.download()</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.download_aiter"><code class="docutils literal notranslate"><span class="pre">FilingSet.download_aiter()</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.get_pandas_data"><code class="docutils literal notranslate"><span class="pre">FilingSet.get_pandas_data()</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.pop_duplicates"><code class="docutils literal notranslate"><span class="pre">FilingSet.pop_duplicates()</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.to_sqlite"><code class="docutils literal notranslate"><span class="pre">FilingSet.to_sqlite()</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.__repr__"><code class="docutils literal notranslate"><span class="pre">FilingSet.__repr__()</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.clear"><code class="docutils literal notranslate"><span class="pre">FilingSet.clear()</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.union"><code class="docutils literal notranslate"><span class="pre">FilingSet.union()</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.update"><code class="docutils literal notranslate"><span class="pre">FilingSet.update()</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.intersection"><code class="docutils literal notranslate"><span class="pre">FilingSet.intersection()</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.intersection_update"><code class="docutils literal notranslate"><span class="pre">FilingSet.intersection_update()</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.difference"><code class="docutils literal notranslate"><span class="pre">FilingSet.difference()</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.difference_update"><code class="docutils literal notranslate"><span class="pre">FilingSet.difference_update()</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.symmetric_difference"><code class="docutils literal notranslate"><span class="pre">FilingSet.symmetric_difference()</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.symmetric_difference_update"><code class="docutils literal notranslate"><span class="pre">FilingSet.symmetric_difference_update()</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.add"><code class="docutils literal notranslate"><span class="pre">FilingSet.add()</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.discard"><code class="docutils literal notranslate"><span class="pre">FilingSet.discard()</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.remove"><code class="docutils literal notranslate"><span class="pre">FilingSet.remove()</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.pop"><code class="docutils literal notranslate"><span class="pre">FilingSet.pop()</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.copy"><code class="docutils literal notranslate"><span class="pre">FilingSet.copy()</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.isdisjoint"><code class="docutils literal notranslate"><span class="pre">FilingSet.isdisjoint()</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.issubset"><code class="docutils literal notranslate"><span class="pre">FilingSet.issubset()</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.issuperset"><code class="docutils literal notranslate"><span class="pre">FilingSet.issuperset()</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.FilingSet.__hash__"><code class="docutils literal notranslate"><span class="pre">FilingSet.__hash__</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=036e6a88"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

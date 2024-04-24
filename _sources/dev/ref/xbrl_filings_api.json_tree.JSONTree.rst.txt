@@ -1,0 +1,27 @@
+﻿json\_tree.JSONTree
+===================
+
+.. currentmodule:: xbrl_filings_api.json_tree
+
+.. autoclass:: JSONTree
+
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~JSONTree.close
+      ~JSONTree.get
+      ~JSONTree.get_key_path_availability_counts
+      ~JSONTree.get_unaccessed_key_paths
+      ~JSONTree.__hash__
+      ~JSONTree.__repr__
+      ~JSONTree.__str__
+
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~JSONTree.unexpected_resource_types
+      ~JSONTree.class_name
+      ~JSONTree.tree
+      ~JSONTree.do_not_track

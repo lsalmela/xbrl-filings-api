@@ -1,0 +1,16 @@
+﻿options
+=======
+
+.. automodule:: xbrl_filings_api.options
+
+   .. rubric:: Module Attributes
+
+   .. autosummary::
+   
+      browser
+      entry_point_url
+      max_page_size
+      open_viewer
+      timeout_sec
+      views
+      year_filter_months

@@ -1,0 +1,31 @@
+﻿FilingsPage
+===========
+
+.. currentmodule:: xbrl_filings_api
+
+.. autoclass:: FilingsPage
+
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~FilingsPage.__hash__
+      ~FilingsPage.__repr__
+      ~FilingsPage.__str__
+
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~FilingsPage.query_filing_count
+      ~FilingsPage.filing_list
+      ~FilingsPage.entity_list
+      ~FilingsPage.validation_message_list
+      ~FilingsPage.api_self_url
+      ~FilingsPage.api_prev_page_url
+      ~FilingsPage.api_next_page_url
+      ~FilingsPage.api_first_page_url
+      ~FilingsPage.api_last_page_url
+      ~FilingsPage.jsonapi_version
+      ~FilingsPage.query_time
+      ~FilingsPage.request_url

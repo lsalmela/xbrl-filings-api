@@ -1,0 +1,10 @@
+﻿download\_specs\_construct
+==========================
+
+.. automodule:: xbrl_filings_api.download_specs_construct
+
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      construct

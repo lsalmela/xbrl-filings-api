@@ -1,0 +1,22 @@
+﻿DownloadItem
+============
+
+.. currentmodule:: xbrl_filings_api
+
+.. autoclass:: DownloadItem
+
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DownloadItem.__repr__
+      ~DownloadItem.__str__
+
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~DownloadItem.filename
+      ~DownloadItem.stem_pattern
+      ~DownloadItem.to_dir
+      ~DownloadItem.__hash__

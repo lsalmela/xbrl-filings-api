@@ -1,0 +1,23 @@
+﻿constants
+=========
+
+.. automodule:: xbrl_filings_api.constants
+
+   .. rubric:: Module Attributes
+
+   .. autosummary::
+   
+      api_attribute_map
+      ATTRS_ALWAYS_EXCLUDE_FROM_DATA
+      DataAttributeType
+      FILE_STRING_CHOICE
+      FileStringType
+      NO_LIMIT
+      PROTOTYPE
+      YearFilterMonthsType
+
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Prototype

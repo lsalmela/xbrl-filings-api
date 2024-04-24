@@ -1,0 +1,36 @@
+﻿ValidationMessage
+=================
+
+.. currentmodule:: xbrl_filings_api
+
+.. autoclass:: ValidationMessage
+
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ValidationMessage.get_data_attributes
+      ~ValidationMessage.__hash__
+      ~ValidationMessage.__repr__
+      ~ValidationMessage.__str__
+
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~ValidationMessage.code
+      ~ValidationMessage.severity
+      ~ValidationMessage.text
+      ~ValidationMessage.calc_computed_sum
+      ~ValidationMessage.calc_reported_sum
+      ~ValidationMessage.calc_context_id
+      ~ValidationMessage.calc_line_item
+      ~ValidationMessage.calc_short_role
+      ~ValidationMessage.calc_unreported_items
+      ~ValidationMessage.duplicate_greater
+      ~ValidationMessage.duplicate_lesser
+      ~ValidationMessage.filing_api_id
+      ~ValidationMessage.filing
+      ~ValidationMessage.api_id
+      ~ValidationMessage.query_time
+      ~ValidationMessage.request_url

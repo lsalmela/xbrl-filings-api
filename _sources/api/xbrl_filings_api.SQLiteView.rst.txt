@@ -1,0 +1,22 @@
+﻿SQLiteView
+==========
+
+.. currentmodule:: xbrl_filings_api
+
+.. autoclass:: SQLiteView
+
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SQLiteView.__hash__
+      ~SQLiteView.__repr__
+      ~SQLiteView.__str__
+
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~SQLiteView.name
+      ~SQLiteView.required_tables
+      ~SQLiteView.sql

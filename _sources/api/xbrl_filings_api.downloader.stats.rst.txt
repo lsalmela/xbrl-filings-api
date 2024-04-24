@@ -1,0 +1,11 @@
+﻿downloader.stats
+================
+
+.. automodule:: xbrl_filings_api.downloader.stats
+
+   .. rubric:: Module Attributes
+
+   .. autosummary::
+   
+      byte_counter
+      item_counter

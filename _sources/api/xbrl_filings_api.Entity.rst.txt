@@ -1,0 +1,27 @@
+﻿Entity
+======
+
+.. currentmodule:: xbrl_filings_api
+
+.. autoclass:: Entity
+
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Entity.get_data_attributes
+      ~Entity.__hash__
+      ~Entity.__repr__
+      ~Entity.__str__
+
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Entity.identifier
+      ~Entity.name
+      ~Entity.filings
+      ~Entity.api_entity_filings_url
+      ~Entity.api_id
+      ~Entity.query_time
+      ~Entity.request_url

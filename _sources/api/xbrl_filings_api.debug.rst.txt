@@ -1,0 +1,12 @@
+﻿debug
+=====
+
+.. automodule:: xbrl_filings_api.debug
+
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      get_key_path_availability_counts
+      get_unaccessed_key_paths
+      get_unexpected_resource_types

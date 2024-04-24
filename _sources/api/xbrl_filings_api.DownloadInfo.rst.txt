@@ -1,0 +1,21 @@
+﻿DownloadInfo
+============
+
+.. currentmodule:: xbrl_filings_api
+
+.. autoclass:: DownloadInfo
+
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DownloadInfo.__repr__
+      ~DownloadInfo.__str__
+
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~DownloadInfo.obj
+      ~DownloadInfo.file
+      ~DownloadInfo.__hash__

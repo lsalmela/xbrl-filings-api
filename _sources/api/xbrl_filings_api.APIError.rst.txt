@@ -1,0 +1,6 @@
+﻿APIError
+========
+
+.. currentmodule:: xbrl_filings_api
+
+.. autoexception:: APIError

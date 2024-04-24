@@ -1,0 +1,23 @@
+﻿APIResource
+===========
+
+.. currentmodule:: xbrl_filings_api
+
+.. autoclass:: APIResource
+
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~APIResource.get_data_attributes
+      ~APIResource.__hash__
+      ~APIResource.__repr__
+      ~APIResource.__str__
+
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~APIResource.api_id
+      ~APIResource.query_time
+      ~APIResource.request_url

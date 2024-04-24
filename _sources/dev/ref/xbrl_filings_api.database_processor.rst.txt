@@ -1,0 +1,10 @@
+﻿database\_processor
+===================
+
+.. automodule:: xbrl_filings_api.database_processor
+
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      sets_to_sqlite

@@ -1,0 +1,508 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Documentation for Python library xbrl-filings-api" name="description" />
+<meta content="XBRL, ESEF, IFRS" name="keywords" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Using reporting_date or last_end_date" href="reporting-date-or-last-end-date.html" /><link rel="prev" title="Welcome to xbrl-filings-api’s documentation!" href="index.html" />
+
+    <!-- Generated with Sphinx 7.3.7 and Furo 2024.01.29 -->
+        <title>Getting started - xbrl-filings-api 1.0a1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">xbrl-filings-api 1.0a1 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">xbrl-filings-api 1.0a1 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reporting-date-or-last-end-date.html">Using reporting_date or last_end_date</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api-reference.html">API reference</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of API reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.query.html">query</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.Filing.html">Filing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.Entity.html">Entity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.ValidationMessage.html">ValidationMessage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.APIError.html">APIError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.FilingSet.html">FilingSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.ResourceCollection.html">ResourceCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.FilingsPage.html">FilingsPage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.APIPage.html">APIPage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.DownloadInfo.html">DownloadInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.DownloadItem.html">DownloadItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.APIObject.html">APIObject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.APIResource.html">APIResource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.SQLiteView.html">SQLiteView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.constants.html">constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.ScopeFlag.html">ScopeFlag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.DEFAULT_VIEWS.html">DEFAULT_VIEWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.exceptions.html">exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.options.html">options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.stats.html">stats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.debug.html">debug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.downloader.html">downloader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.downloader.stats.html">downloader.stats</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="dev/index.html">Development</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Development</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev/before-commit.html">Before commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev/doc-conventions.html">Documentation conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev/release-checklist.html">Release checklist</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="dev/internal-reference.html">Internal reference</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Internal reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="dev/ref/xbrl_filings_api.database_processor.html">database_processor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/ref/xbrl_filings_api.download_info.DownloadInfo.html">download_info.DownloadInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/ref/xbrl_filings_api.download_specs_construct.html">download_specs_construct</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/ref/xbrl_filings_api.json_tree.JSONTree.html">json_tree.JSONTree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/ref/xbrl_filings_api.lang_code_transform.html">lang_code_transform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/ref/xbrl_filings_api.order_columns.order_columns.html">order_columns.order_columns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/ref/xbrl_filings_api.parse_type.ParseType.html">parse_type.ParseType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/ref/xbrl_filings_api.request_processor.html">request_processor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="getting-started">
+<h1>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading">¶</a></h1>
+<p>To avoid unneccesarily long examples, this documentation uses alias
+<code class="docutils literal notranslate"><span class="pre">xf</span></code> for the library. Consequently, it can be expected that all
+examples begin:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xbrl_filings_api</span> <span class="k">as</span> <span class="nn">xf</span>
+</pre></div>
+</div>
+<p>With regards to <abbr title="European Single Electronic Format">ESEF</abbr>
+filings, the term <em>entity</em> is used instead of <em>issuer</em>, as this is the
+term used in the API, the library, and XBRL in general.</p>
+<section id="fetching-the-filings">
+<h2>Fetching the filings<a class="headerlink" href="#fetching-the-filings" title="Link to this heading">¶</a></h2>
+<p>The API natively supports two means of fetching the desired filings.
+These are equality-based filtering and sorting. The following query
+fetches three oldest Finnish filings in the database using the
+<a class="reference internal" href="api/xbrl_filings_api.query.html#xbrl_filings_api.query.get_filings" title="xbrl_filings_api.query.get_filings"><code class="xref any py py-func docutils literal notranslate"><span class="pre">get_filings()</span></code></a> function:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span> <span class="o">=</span> <span class="n">xf</span><span class="o">.</span><span class="n">get_filings</span><span class="p">({</span><span class="s1">&#39;country&#39;</span><span class="p">:</span> <span class="s1">&#39;FI&#39;</span><span class="p">},</span> <span class="n">sort</span><span class="o">=</span><span class="s1">&#39;added_time&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The first <code class="docutils literal notranslate"><span class="pre">filters</span></code> parameter value demands the API to return only
+filings whose field <code class="docutils literal notranslate"><span class="pre">'country'</span></code> is the country code of Finland,
+<code class="docutils literal notranslate"><span class="pre">'FI'</span></code>. The <code class="docutils literal notranslate"><span class="pre">filters</span></code> values are case-sensitive, so requesting
+filings with country <code class="docutils literal notranslate"><span class="pre">'fi'</span></code> would fetch nothing.</p>
+<p>The parameter <code class="docutils literal notranslate"><span class="pre">limit</span></code> states the maximum number of filings to
+retrieve. Its default value is <a class="reference internal" href="api/xbrl_filings_api.constants.html#xbrl_filings_api.constants.NO_LIMIT" title="xbrl_filings_api.constants.NO_LIMIT"><code class="xref any py py-data docutils literal notranslate"><span class="pre">NO_LIMIT</span></code></a>. Please be careful with
+executing unfiltered and unlimited query calls, the underlying database
+is large.</p>
+<p>Default sort order is ascending. To reverse the sort order, use minus
+sign in the front of the sort field. The latest added records are thus
+requested:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span> <span class="o">=</span> <span class="n">xf</span><span class="o">.</span><span class="n">get_filings</span><span class="p">({</span><span class="s1">&#39;country&#39;</span><span class="p">:</span> <span class="s1">&#39;FI&#39;</span><span class="p">},</span> <span class="n">sort</span><span class="o">=</span><span class="s1">&#39;-added_time&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The returned object is a <a class="reference internal" href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet" title="xbrl_filings_api.FilingSet"><code class="xref any py py-class docutils literal notranslate"><span class="pre">FilingSet</span></code></a> which is a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">set</span></code></a>-like
+object containing <a class="reference internal" href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing" title="xbrl_filings_api.Filing"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Filing</span></code></a> objects. All set operations (methods and
+operators) are supported and they are not dependent on the filing object
+identity. In other words, you can for example take a union of the
+results of two separate queries and if they contain same filings, these
+filings are handled intuitively, having no duplicates in the output.
+However in-place operations (e.g. <a class="reference internal" href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.intersection_update" title="xbrl_filings_api.FilingSet.intersection_update"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">FilingSet.intersection_update()</span></code></a>) are
+recommended intead of new set operations (e.g.
+<a class="reference internal" href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.intersection" title="xbrl_filings_api.FilingSet.intersection"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">FilingSet.intersection()</span></code></a>) to limit the number of deep copied objects.</p>
+<p>The library provides convenient <a class="reference external" href="https://docs.python.org/3/library/functions.html#repr" title="(in Python v3.12)"><code class="xref py py-func docutils literal notranslate"><span class="pre">repr()</span></code></a> and <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str()</span></code></a>
+representations for all <a class="reference internal" href="api/xbrl_filings_api.APIResource.html#xbrl_filings_api.APIResource" title="xbrl_filings_api.APIResource"><code class="xref any py py-class docutils literal notranslate"><span class="pre">APIResource</span></code></a> objects, i.e., filings, entities
+and validation messages.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">filing</span> <span class="ow">in</span> <span class="n">fs</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">filing</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">743700PEMBIJ4GPCYX48-2023-12-31-ESEF-FI-0 2023 [fi]</span>
+<span class="go">7437004XD6U0FFDCT507-2023-12-31-ESEF-FI-1 2023 [fi]</span>
+<span class="go">743700W8ZIJAMXWWWD26-2023-12-31-ESEF-FI-0 2023 [fi]</span>
+</pre></div>
+</div>
+<p>However, as shown above, querying the sole filings does not reproduce
+very easily comprehended <code class="docutils literal notranslate"><span class="pre">str()</span></code> values. The above rows show
+<a class="reference internal" href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.filing_index" title="xbrl_filings_api.Filing.filing_index"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">Filing.filing_index</span></code></a> instead of <a class="reference internal" href="api/xbrl_filings_api.Entity.html#xbrl_filings_api.Entity.name" title="xbrl_filings_api.Entity.name"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">Entity.name</span></code></a>. To see the latter, we
+must query again but now including the entities in our results setting
+parameter <code class="docutils literal notranslate"><span class="pre">flags</span></code> to <a class="reference internal" href="api/xbrl_filings_api.ScopeFlag.html#xbrl_filings_api.ScopeFlag.GET_ENTITY" title="xbrl_filings_api.ScopeFlag.GET_ENTITY"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">GET_ENTITY</span></code></a>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span> <span class="o">=</span> <span class="n">xf</span><span class="o">.</span><span class="n">get_filings</span><span class="p">({</span><span class="s1">&#39;country&#39;</span><span class="p">:</span> <span class="s1">&#39;FI&#39;</span><span class="p">},</span> <span class="n">sort</span><span class="o">=</span><span class="s1">&#39;-added_time&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">xf</span><span class="o">.</span><span class="n">GET_ENTITY</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">filing</span> <span class="ow">in</span> <span class="n">fs</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">filing</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">Elecster Oyj 2023 [fi]</span>
+<span class="go">Scanfil Oyj 2023 [fi]</span>
+<span class="go">Aspocomp Group Oyj 2023 [fi]</span>
+</pre></div>
+</div>
+<p>The above call to <code class="docutils literal notranslate"><span class="pre">get_filings()</span></code> still only produces a single request
+to the API but take advantage of the JSON:API <a class="reference external" href="https://jsonapi.org/format/1.0/#fetching-includes">include parameter</a>. See
+<a class="reference internal" href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.__str__" title="xbrl_filings_api.Filing.__str__"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">Filing.__str__</span></code></a> for the full explanation of <code class="docutils literal notranslate"><span class="pre">str()</span></code> format.</p>
+</section>
+<section id="multifilters">
+<h2>Multifilters<a class="headerlink" href="#multifilters" title="Link to this heading">¶</a></h2>
+<p>It is possible to query with <a class="reference internal" href="glossary.html#term-iterable"><span class="xref std std-term">iterable</span></a> values in a logical <code class="docutils literal notranslate"><span class="pre">OR</span></code>
+style. This will create multiple requests to the API for each value of
+the iterable. For example to get the filings of Kone and Nokia for year
+2022 by their LEI codes in attribute <a class="reference internal" href="api/xbrl_filings_api.Entity.html#xbrl_filings_api.Entity.identifier" title="xbrl_filings_api.Entity.identifier"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">Filing.entity.identifier</span></code></a>, query:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span> <span class="o">=</span> <span class="n">xf</span><span class="o">.</span><span class="n">get_filings</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">filters</span><span class="o">=</span><span class="p">{</span>
+<span class="gp">... </span>        <span class="s1">&#39;entity.identifier&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;2138001CNF45JP5XZK38&#39;</span><span class="p">,</span> <span class="s1">&#39;549300A0JPRWG1KI7U06&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="s1">&#39;last_end_date&#39;</span><span class="p">:</span> <span class="s1">&#39;2022-12-31&#39;</span><span class="p">},</span>
+<span class="gp">... </span>    <span class="n">flags</span><span class="o">=</span><span class="n">xf</span><span class="o">.</span><span class="n">GET_ENTITY</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">filing</span> <span class="ow">in</span> <span class="n">fs</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">filing</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">KONE OYJ 2022 [fi]</span>
+<span class="go">KONE OYJ 2022 [en]</span>
+<span class="go">Nokia Oyj 2022 [fi]</span>
+</pre></div>
+</div>
+<p>More than one filter can have iterable value. You can find LEI codes for
+example with the <a class="reference external" href="https://search.gleif.org">GLEIF foundation search</a>.</p>
+</section>
+<section id="filings-for-a-financial-year">
+<h2>Filings for a financial year<a class="headerlink" href="#filings-for-a-financial-year" title="Link to this heading">¶</a></h2>
+<p>The <a class="reference internal" href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing" title="xbrl_filings_api.Filing"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Filing</span></code></a> objects have two attributes for the filing date, i.e., the
+end of the fiscal year of the reporting period. These are
+<a class="reference internal" href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.last_end_date" title="xbrl_filings_api.Filing.last_end_date"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">last_end_date</span></code></a> and <a class="reference internal" href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.reporting_date" title="xbrl_filings_api.Filing.reporting_date"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">reporting_date</span></code></a>. For most filings, they are the
+same value, but in certain cases they differ. For a detailed
+explanation, see <a class="reference internal" href="reporting-date-or-last-end-date.html"><span class="doc">Using reporting_date or last_end_date</span></a>.</p>
+<p>What comes to querying, the most pronounced difference is that
+<code class="docutils literal notranslate"><span class="pre">last_end_date</span></code> can be used for querying where as the derived
+attribute <code class="docutils literal notranslate"><span class="pre">reporting_date</span></code> can not.</p>
+<p>So, were we interested in querying for Norwegian filings whose reporting
+period ends on 31 December 2022, we would use the following call:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span> <span class="o">=</span> <span class="n">xf</span><span class="o">.</span><span class="n">get_filings</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">filters</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;country&#39;</span><span class="p">:</span> <span class="s1">&#39;NO&#39;</span><span class="p">,</span> <span class="s1">&#39;last_end_date&#39;</span><span class="p">:</span> <span class="s1">&#39;2022-12-31&#39;</span><span class="p">},</span>
+<span class="gp">... </span>    <span class="n">limit</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">xf</span><span class="o">.</span><span class="n">GET_ENTITY</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">filing</span> <span class="ow">in</span> <span class="n">fs</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">filing</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">ELKEM ASA 2022 [en]</span>
+<span class="go">B2HOLDING ASA 2022 [en]</span>
+<span class="go">MEDISTIM ASA 2022 [en]</span>
+</pre></div>
+</div>
+<p>Often, however, the interest is on the filings whose reporting period
+ends during the calendar year instead of just last day of December.
+We happen to know that <em>Stolt-Nielsen Limited</em> has a reporting period
+ending on the last day of November, 2022. Thus, we want to use a
+<em>year filter</em> and only provide a year as the filter value.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span> <span class="o">=</span> <span class="n">xf</span><span class="o">.</span><span class="n">get_filings</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">filters</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;country&#39;</span><span class="p">:</span> <span class="s1">&#39;NO&#39;</span><span class="p">,</span> <span class="s1">&#39;last_end_date&#39;</span><span class="p">:</span> <span class="mi">2022</span><span class="p">},</span>
+<span class="gp">... </span>    <span class="n">sort</span><span class="o">=</span><span class="s1">&#39;last_end_date&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">xf</span><span class="o">.</span><span class="n">GET_ENTITY</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">filing</span> <span class="ow">in</span> <span class="n">fs</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">filing</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">SAS AB Oct-2022 [sv]</span>
+<span class="go">Navig8 Topco Holdings Inc Mar-2022</span>
+<span class="go">STOLT-NIELSEN LIMITED Nov-2022 [en]</span>
+</pre></div>
+</div>
+<p>The scope of the year filter is defined in <a class="reference internal" href="api/xbrl_filings_api.options.html#xbrl_filings_api.options.year_filter_months" title="xbrl_filings_api.options.year_filter_months"><code class="xref any py py-data docutils literal notranslate"><span class="pre">options.year_filter_months</span></code></a>
+and its default value is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+ <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Option <code class="docutils literal notranslate"><span class="pre">year_filter_months</span></code> is a tuple of two tuples. The inner tuples
+consist of two integers: year offset and month number. The last month is
+non-inclusive (as with Python <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#range" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">range()</span></code></a> iterator).
+Therefore, the default year filter for <code class="docutils literal notranslate"><span class="pre">2022</span></code> returns filings whose
+<code class="docutils literal notranslate"><span class="pre">last_end_date</span></code> is any last day of month from 31 January 2022 until 31
+December 2022.</p>
+<p>You might also be interested in fiscal years ending around the end of
+calendar year. To query Norwegian filings around the end of year 2022
+(30 June 2022 to 31 May 2023), use the following:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xf</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">year_filter_months</span> <span class="o">=</span> <span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span> <span class="o">=</span> <span class="n">xf</span><span class="o">.</span><span class="n">get_filings</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">filters</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;country&#39;</span><span class="p">:</span> <span class="s1">&#39;NO&#39;</span><span class="p">,</span> <span class="s1">&#39;last_end_date&#39;</span><span class="p">:</span> <span class="mi">2022</span><span class="p">},</span>
+<span class="gp">... </span>    <span class="n">sort</span><span class="o">=</span><span class="s1">&#39;last_end_date&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">xf</span><span class="o">.</span><span class="n">GET_ENTITY</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">filing</span> <span class="ow">in</span> <span class="n">fs</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">filing</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">MEDISTIM ASA 2022 [en]</span>
+<span class="go">STOLT-NIELSEN LIMITED Nov-2022 [en]</span>
+<span class="go">SAS AB Oct-2022 [sv]</span>
+</pre></div>
+</div>
+<p>Notice that filing <em>Navig8 Topco Holdings Inc Mar-2022</em> disappeared.</p>
+<p>To query all month end dates in three years, you can set
+<code class="docutils literal notranslate"><span class="pre">year_filter_months</span></code> to <code class="docutils literal notranslate"><span class="pre">((0,</span> <span class="pre">1),</span> <span class="pre">(2,</span> <span class="pre">12))</span></code>.</p>
+<p>It is also possible to filter with month which will make a query to the
+last day of the month. The following queries for filings with reporting
+period ending on 28 February 2022:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span> <span class="o">=</span> <span class="n">xf</span><span class="o">.</span><span class="n">get_filings</span><span class="p">({</span><span class="s1">&#39;last_end_date&#39;</span><span class="p">:</span> <span class="s1">&#39;2022-02&#39;</span><span class="p">},</span> <span class="n">flags</span><span class="o">=</span><span class="n">xf</span><span class="o">.</span><span class="n">GET_ENTITY</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All fields ending <code class="docutils literal notranslate"><span class="pre">'_date'</span></code> can also be queried with
+<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.date" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.date</span></code></a> objects. Year query can be made with
+<code class="docutils literal notranslate"><span class="pre">str</span></code> or <code class="docutils literal notranslate"><span class="pre">int</span></code> and month query with <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
+</div>
+</section>
+<section id="apiobject-inheritance-hierarchy">
+<h2>APIObject inheritance hierarchy<a class="headerlink" href="#apiobject-inheritance-hierarchy" title="Link to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">APIObject</span>
+    <span class="n">APIResource</span>
+        <span class="n">Filing</span>
+        <span class="n">Entity</span>
+        <span class="n">ValidationMessage</span>
+    <span class="n">APIPage</span>
+        <span class="n">FilingsPage</span>
+    <span class="n">APIError</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="reporting-date-or-last-end-date.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Using reporting_date or last_end_date</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Home</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, Lauri Salmela
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Getting started</a><ul>
+<li><a class="reference internal" href="#fetching-the-filings">Fetching the filings</a></li>
+<li><a class="reference internal" href="#multifilters">Multifilters</a></li>
+<li><a class="reference internal" href="#filings-for-a-financial-year">Filings for a financial year</a></li>
+<li><a class="reference internal" href="#apiobject-inheritance-hierarchy">APIObject inheritance hierarchy</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=036e6a88"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

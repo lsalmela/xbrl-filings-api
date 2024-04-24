@@ -1,0 +1,27 @@
+﻿APIPage
+=======
+
+.. currentmodule:: xbrl_filings_api
+
+.. autoclass:: APIPage
+
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~APIPage.__hash__
+      ~APIPage.__repr__
+      ~APIPage.__str__
+
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~APIPage.api_self_url
+      ~APIPage.api_prev_page_url
+      ~APIPage.api_next_page_url
+      ~APIPage.api_first_page_url
+      ~APIPage.api_last_page_url
+      ~APIPage.jsonapi_version
+      ~APIPage.query_time
+      ~APIPage.request_url

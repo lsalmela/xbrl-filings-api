@@ -1,0 +1,24 @@
+﻿ResourceCollection
+==================
+
+.. currentmodule:: xbrl_filings_api
+
+.. autoclass:: ResourceCollection
+
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ResourceCollection.get_pandas_data
+      ~ResourceCollection.__hash__
+      ~ResourceCollection.__repr__
+      ~ResourceCollection.__str__
+
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~ResourceCollection.columns
+      ~ResourceCollection.exist
+      ~ResourceCollection.filingset
+      ~ResourceCollection.item_class

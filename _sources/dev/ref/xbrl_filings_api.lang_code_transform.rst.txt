@@ -1,0 +1,4 @@
+﻿lang\_code\_transform
+=====================
+
+.. automodule:: xbrl_filings_api.lang_code_transform

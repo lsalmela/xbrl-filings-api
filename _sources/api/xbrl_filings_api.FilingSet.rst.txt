@@ -1,0 +1,44 @@
+﻿FilingSet
+=========
+
+.. currentmodule:: xbrl_filings_api
+
+.. autoclass:: FilingSet
+
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~FilingSet.add
+      ~FilingSet.clear
+      ~FilingSet.copy
+      ~FilingSet.difference
+      ~FilingSet.difference_update
+      ~FilingSet.discard
+      ~FilingSet.download
+      ~FilingSet.download_aiter
+      ~FilingSet.get_pandas_data
+      ~FilingSet.intersection
+      ~FilingSet.intersection_update
+      ~FilingSet.isdisjoint
+      ~FilingSet.issubset
+      ~FilingSet.issuperset
+      ~FilingSet.pop
+      ~FilingSet.pop_duplicates
+      ~FilingSet.remove
+      ~FilingSet.symmetric_difference
+      ~FilingSet.symmetric_difference_update
+      ~FilingSet.to_sqlite
+      ~FilingSet.union
+      ~FilingSet.update
+      ~FilingSet.__repr__
+      ~FilingSet.__str__
+
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~FilingSet.columns
+      ~FilingSet.entities
+      ~FilingSet.validation_messages
+      ~FilingSet.__hash__
