@@ -1,9 +1,0 @@
-__pycache__/
-.mypy_cache/
-.pytest_cache/
-.ruff_cache/
-.vscode/
-author-notes/
-dist/
-.coverage*
-*.egg-info
