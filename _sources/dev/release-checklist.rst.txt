@@ -44,23 +44,28 @@ Documentation
 Final steps
 -----------
 
-1. Commit last changes to the release.
+1. Commit and push last changes to the release. Wait for GitHub Actions
+   to run and check results.
 
-2. Create ``git`` tag for the release::
+2. Create an annotated ``git`` tag for the release::
 
     git tag -a v<release> -m "Release description."
 
-3. Remove the ``dist`` folder, if it exists.
+3. Push the tag::
 
-4. Build the sdist and wheel:
+    git push origin tag v<release>
+
+4. Remove the ``dist`` folder, if it exists.
+
+5. Build the sdist and wheel:
 
    .. code-block:: console
 
         hatch build
 
-5. Check the contents of both archives.
+6. Check the contents of both archives.
 
-6. Publish to PyPI.
+7. Publish to PyPI.
 
    .. code-block:: console
 
