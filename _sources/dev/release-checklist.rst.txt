@@ -25,9 +25,7 @@ Documentation
 3. Delete folders :file:`docs/source/ref`, :file:`docs/source/dev/ref`,
    and :file:`docs/build`.
 
-4. Update ``conf.py::release``
-
-5. Check external link integrity (in project shell/project folder):
+4. Check external link integrity (in project shell/project folder):
 
    .. code-block:: console
 
@@ -37,10 +35,33 @@ Documentation
 
         http://www.example.com/esef/taxonomy/2022-12-31/FinancialPositionConsolidated
 
-6. Go through narrative documentation so that functions and methods work
+5. Go through narrative documentation so that functions and methods work
    as documented.
+
+6. Update ``xbrl_filings_api/__about__.py::__version__`` and
+   ``conf.py::release``.
 
 Final steps
 -----------
 
-1. Create ``git`` tag for the release.
+1. Commit last changes to the release.
+
+2. Create ``git`` tag for the release::
+
+    git tag -a v<release> -m "Release description."
+
+3. Remove the ``dist`` folder, if it exists.
+
+4. Build the sdist and wheel:
+
+   .. code-block:: console
+
+        hatch build
+
+5. Check the contents of both archives.
+
+6. Publish to PyPI.
+
+   .. code-block:: console
+
+        hatch publish -u __token__ -a pypi-<restofapitoken>
