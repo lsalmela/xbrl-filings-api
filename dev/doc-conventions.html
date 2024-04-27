@@ -3,14 +3,19 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="Documentation for Python library xbrl-filings-api" name="description" />
-<meta content="XBRL, ESEF, IFRS" name="keywords" />
+<meta property="og:title" content="Documentation conventions" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://lsalmela.github.io/xbrl-filings-api/dev/doc-conventions.html" />
+<meta property="og:site_name" content="XBRL Filings API Documentation" />
+<meta property="og:description" content="The library uses NumPy style docstrings. Parameter names are, however, enclosed in double backticks instead of single ones due to Sphinx default domain being any. Single backticks would lead to err..." />
+<meta name="description" content="The library uses NumPy style docstrings. Parameter names are, however, enclosed in double backticks instead of single ones due to Sphinx default domain being any. Single backticks would lead to err..." />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Release checklist" href="release-checklist.html" /><link rel="prev" title="Before commit" href="before-commit.html" />
 
-    <!-- Generated with Sphinx 7.3.7 and Furo 2024.01.29 -->
-        <title>Documentation conventions - xbrl-filings-api 1.0a1 documentation</title>
+    <!-- Generated with Sphinx 7.3.7 and Furo 2024.04.27 -->
+        <title>Documentation conventions - XBRL Filings API Documentation 1.0a1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=437aa6ec" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
     
     
@@ -114,6 +119,8 @@
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
 
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
 
 
 <div class="page">
@@ -125,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">xbrl-filings-api 1.0a1 documentation</div></a>
+      <a href="../index.html"><div class="brand">XBRL Filings API Documentation 1.0a1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +155,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">xbrl-filings-api 1.0a1 documentation</span>
+  <span class="sidebar-brand-text">XBRL Filings API Documentation 1.0a1 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -160,6 +167,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reporting-date-or-last-end-date.html">Using reporting_date or last_end_date</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changing-year-filter-scope.html">Changing year filter scope</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../api-reference.html">API reference</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of API reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../api/xbrl_filings_api.query.html">query</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/xbrl_filings_api.Filing.html">Filing</a></li>
@@ -177,7 +185,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../api/xbrl_filings_api.SQLiteView.html">SQLiteView</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/xbrl_filings_api.constants.html">constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/xbrl_filings_api.ScopeFlag.html">ScopeFlag</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/xbrl_filings_api.DEFAULT_VIEWS.html">DEFAULT_VIEWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/xbrl_filings_api.default_views.html">default_views</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/xbrl_filings_api.exceptions.html">exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/xbrl_filings_api.options.html">options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/xbrl_filings_api.stats.html">stats</a></li>
@@ -237,17 +245,40 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <section id="documentation-conventions">
 <h1>Documentation conventions<a class="headerlink" href="#documentation-conventions" title="Link to this heading">¶</a></h1>
 <p>The library uses NumPy style docstrings. Parameter names are, however,
-enclosed in double backticks (<code class="docutils literal notranslate"><span class="pre">``param``</span></code>) instead of single ones
-(<code class="docutils literal notranslate"><span class="pre">`param`</span></code>) due to Sphinx default domain being <code class="docutils literal notranslate"><span class="pre">any</span></code>. Single
-backticks would lead to errors in resolving the reference.</p>
+enclosed in double backticks instead of single ones due to Sphinx
+default domain being <code class="docutils literal notranslate"><span class="pre">any</span></code>. Single backticks would lead to errors in
+resolving the reference.</p>
+<p>In RST documentation:</p>
+<ul>
+<li><p>Quote callable <code class="docutils literal notranslate"><span class="pre">``parameter``</span></code></p></li>
+<li><p>Quote complete string:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>``&#39;json&#39;``
+</pre></div>
+</div>
+</li>
+<li><p>Quote part of string:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>``&quot;_time&quot;``
+</pre></div>
+</div>
+</li>
+<li><p>Quote <code class="docutils literal notranslate"><span class="pre">`member`</span></code> of class</p></li>
+</ul>
+<p>In markdown:</p>
+<ul class="simple">
+<li><p>Quote callable <code class="docutils literal notranslate"><span class="pre">`parameter`</span></code></p></li>
+<li><p>Quote <code class="docutils literal notranslate"><span class="pre">`'json'`</span></code> complete string</p></li>
+<li><p>Quote <code class="docutils literal notranslate"><span class="pre">`&quot;_time&quot;`</span></code> part of string</p></li>
+<li><p>Quote <code class="docutils literal notranslate"><span class="pre">`member`</span></code> of class</p></li>
+</ul>
+<p>Never use backticks in log or exception messages. Parameter names are
+surrounded by single quotes.</p>
 <p>Each name in the API such as class or function is cross-referenced with
 a link only once within the same second level section (sections with
-hyphen underline). Later mentions are simple
-<code class="docutils literal notranslate"><span class="pre">``inline</span> <span class="pre">literals``</span></code>.</p>
+hyphen underline). Later mentions are simple <code class="docutils literal notranslate"><span class="pre">``inline</span> <span class="pre">literals``</span></code>.</p>
 <p>XHTML is written with a capital ‘X’ as spelled in the
 <a class="reference external" href="https://www.w3.org/TR/xhtml1/">original XHTML 1.0 specification</a>.
 Were the first letter in lower case, the unfortunate standard would have
@@ -255,10 +286,6 @@ more than three capital letters nevertheless.</p>
 <p>The special constants <code class="code highlight pt python docutils literal highlight-python"><span class="kc">None</span></code>, <code class="code highlight pt python docutils literal highlight-python"><span class="kc">True</span></code> and <code class="code highlight pt python docutils literal highlight-python"><span class="kc">False</span></code> are used
 with role <code class="docutils literal notranslate"><span class="pre">pt</span></code> to signify inline Python code formatting. E.g.
 <code class="docutils literal notranslate"><span class="pre">:pt:`None`</span></code>.</p>
-<p>Single quotes are used everywhere in the library except for non-code
-literal strings in docstrings and log messages. Python names such as
-parameter names are surrounded by single quotes in log messages and
-double backquotes in docstrings.</p>
 <p>Public superclass members always cross-reference their own class name in
 the short summaries of docstrings. This ensures subclasses have required
 links in their autosummaries.</p>
@@ -270,9 +297,9 @@ attribute type from description. Write JSON:API as JSON-API instead.</p>
 ordered according to <code class="xref py py-func docutils literal notranslate"><span class="pre">order_columns()</span></code> order if they are subclasses
 of <a class="reference internal" href="../api/xbrl_filings_api.APIResource.html#xbrl_filings_api.APIResource" title="xbrl_filings_api.APIResource"><code class="xref any py py-class docutils literal notranslate"><span class="pre">APIResource</span></code></a>, otherwise alphabetically. Special methods are always
 ordered after public methods.</p>
-<p>Order methods in groups and prefer alphabetic ordering (custom order if
-seems awkward, especially regarding dataclasses). Groups should be in
-the following order:</p>
+<p>Order members and methods in groups and prefer alphabetic ordering
+(custom order if seems awkward, especially when small number of
+members). Groups of methods should be in the following order:</p>
 <ol class="arabic simple">
 <li><p>Static methods</p></li>
 <li><p>Class methods</p></li>
@@ -298,7 +325,8 @@ the following fashion:</p>
 <h2>Definition of private<a class="headerlink" href="#definition-of-private" title="Link to this heading">¶</a></h2>
 <p>The private prefix (underscore) is used in the scope of the object to
 define members which should not be accessed outside of the object. The
-scope of this rule begins from module members.</p>
+scope of this rule begins from module members. Module names are never
+prefixed.</p>
 <p>Consequently, an underscore-prefixed class is internal to the module, a
 prefixed attribute is internal to the class etc.</p>
 </section>
@@ -375,6 +403,8 @@ prefixed attribute is internal to the class etc.</p>
 </div><script src="../_static/documentation_options.js?v=036e6a88"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/scripts/furo.js?v=4e2eecee"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=6dbb43f8"></script>
     </body>
 </html>

@@ -1,6 +1,0 @@
-﻿DEFAULT\_VIEWS
-==============
-
-.. currentmodule:: xbrl_filings_api
-
-.. autodata:: DEFAULT_VIEWS

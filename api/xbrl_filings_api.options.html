@@ -3,14 +3,19 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="Documentation for Python library xbrl-filings-api" name="description" />
-<meta content="XBRL, ESEF, IFRS" name="keywords" />
+<meta property="og:title" content="options" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://lsalmela.github.io/xbrl-filings-api/api/xbrl_filings_api.options.html" />
+<meta property="og:site_name" content="XBRL Filings API Documentation" />
+<meta property="og:description" content="General options for the library. Module Attributes" />
+<meta name="description" content="General options for the library. Module Attributes" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="stats" href="xbrl_filings_api.stats.html" /><link rel="prev" title="exceptions" href="xbrl_filings_api.exceptions.html" />
 
-    <!-- Generated with Sphinx 7.3.7 and Furo 2024.01.29 -->
-        <title>options - xbrl-filings-api 1.0a1 documentation</title>
+    <!-- Generated with Sphinx 7.3.7 and Furo 2024.04.27 -->
+        <title>options - XBRL Filings API Documentation 1.0a1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=437aa6ec" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
     
     
@@ -114,6 +119,8 @@
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
 
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
 
 
 <div class="page">
@@ -125,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">xbrl-filings-api 1.0a1 documentation</div></a>
+      <a href="../index.html"><div class="brand">XBRL Filings API Documentation 1.0a1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +155,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">xbrl-filings-api 1.0a1 documentation</span>
+  <span class="sidebar-brand-text">XBRL Filings API Documentation 1.0a1 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -160,6 +167,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reporting-date-or-last-end-date.html">Using reporting_date or last_end_date</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changing-year-filter-scope.html">Changing year filter scope</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../api-reference.html">API reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of API reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.query.html">query</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.Filing.html">Filing</a></li>
@@ -177,7 +185,7 @@
 <li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.SQLiteView.html">SQLiteView</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.constants.html">constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.ScopeFlag.html">ScopeFlag</a></li>
-<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.DEFAULT_VIEWS.html">DEFAULT_VIEWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.default_views.html">default_views</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.exceptions.html">exceptions</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.stats.html">stats</a></li>
@@ -237,7 +245,7 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <section id="module-xbrl_filings_api.options">
 <span id="options"></span><h1>options<a class="headerlink" href="#module-xbrl_filings_api.options" title="Link to this heading">¶</a></h1>
 <p>General options for the library.</p>
@@ -280,7 +288,7 @@ called. Valid value can be created with <a class="reference external" href="http
 
 <dl class="py data">
 <dt class="sig sig-object py" id="xbrl_filings_api.options.entry_point_url">
-<span class="sig-prename descclassname"><span class="pre">xbrl_filings_api.options.</span></span><span class="sig-name descname"><span class="pre">entry_point_url</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'https://filings.xbrl.org/api/filings'</span></em><a class="headerlink" href="#xbrl_filings_api.options.entry_point_url" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xbrl_filings_api.options.</span></span><span class="sig-name descname"><span class="pre">entry_point_url</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'https://filings.xbrl.org/api'</span></em><a class="headerlink" href="#xbrl_filings_api.options.entry_point_url" title="Link to this definition">¶</a></dt>
 <dd><p>API entry point URL for requests.</p>
 <p>Default value is <code class="docutils literal notranslate"><span class="pre">'https://filings.xbrl.org/api/filings'</span></code>.</p>
 </dd></dl>
@@ -315,7 +323,7 @@ will be set as <code class="docutils literal notranslate"><span class="pre">limi
 <span class="sig-prename descclassname"><span class="pre">xbrl_filings_api.options.</span></span><span class="sig-name descname"><span class="pre">views</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="xbrl_filings_api.SQLiteView.html#xbrl_filings_api.SQLiteView" title="xbrl_filings_api.SQLiteView"><span class="pre">SQLiteView</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[SQLiteView(name='ViewEnclosure',</span> <span class="pre">required_tables=('Entity',)),</span> <span class="pre">SQLiteView(name='ViewFilingAge',</span> <span class="pre">required_tables=('Entity',)),</span> <span class="pre">SQLiteView(name='ViewNumericErrors',</span> <span class="pre">required_tables=('ValidationMessage',</span> <span class="pre">'Entity'))]</span></em><a class="headerlink" href="#xbrl_filings_api.options.views" title="Link to this definition">¶</a></dt>
 <dd><p>SQLite3 views to be added to created/edited databases.</p>
 <p>The <a class="reference internal" href="xbrl_filings_api.SQLiteView.html#xbrl_filings_api.SQLiteView.name" title="xbrl_filings_api.SQLiteView.name"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">SQLiteView.name</span></code></a> attributes of objects may not be overlapping.</p>
-<p>Default value is <a class="reference internal" href="xbrl_filings_api.DEFAULT_VIEWS.html#xbrl_filings_api.DEFAULT_VIEWS" title="xbrl_filings_api.DEFAULT_VIEWS"><code class="xref any py py-data docutils literal notranslate"><span class="pre">DEFAULT_VIEWS</span></code></a>.</p>
+<p>Default value is <a class="reference internal" href="xbrl_filings_api.default_views.html#xbrl_filings_api.default_views.DEFAULT_VIEWS" title="xbrl_filings_api.default_views.DEFAULT_VIEWS"><code class="xref any py py-data docutils literal notranslate"><span class="pre">DEFAULT_VIEWS</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py data">
@@ -408,6 +416,8 @@ specified year until December 31 in the same year.</p>
 </div><script src="../_static/documentation_options.js?v=036e6a88"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/scripts/furo.js?v=4e2eecee"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=6dbb43f8"></script>
     </body>
 </html>

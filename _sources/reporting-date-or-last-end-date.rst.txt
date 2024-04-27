@@ -1,3 +1,5 @@
+.. _ESEF Reporting Manual: https://www.esma.europa.eu/sites/default/files/library/esma32-60-254_esef_reporting_manual.pdf
+
 Using reporting_date or last_end_date
 =====================================
 
@@ -7,7 +9,7 @@ The `Filing` objects have two attributes for filing date. These are
 Attribute last_end_date
 -----------------------
 
-The attribute ``last_end_date`` is a data attribute of the filing
+The attribute `last_end_date` is a data attribute of the filing
 returned from the API. It can be used for filtering and sorting. The
 attribute has been renamed in this library from the original name
 ``period_end``.
@@ -31,4 +33,13 @@ on the decision day of paying interim dividends (``api_id='12392'``).
 Attribute reporting_date
 ------------------------
 
-``last_end_date`` may be on last day of month? api_id=2532
+The attribute `reporting_date` has been derived from the filename in
+`package_url` and `last_end_date`, and falls back to using
+`last_end_date` if neither could be resolved. This is the file naming
+convention used in ESEF reporting (`ESEF Reporting Manual`_,
+Guidance 2.6.3). There are mistakes in the filenames as well, but
+technical issues such as very lately dated tagged facts do not interfere
+with it.
+
+A major caveat with this value is that as a field derived by the
+library, it cannot be used in filtering and sorting the query.

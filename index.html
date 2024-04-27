@@ -3,14 +3,19 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="Documentation for Python library xbrl-filings-api" name="description" />
-<meta content="XBRL, ESEF, IFRS" name="keywords" />
+<meta property="og:title" content="Welcome to XBRL Filings API’s documentation!" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://lsalmela.github.io/xbrl-filings-api/index.html" />
+<meta property="og:site_name" content="XBRL Filings API Documentation" />
+<meta property="og:description" content="Source code for the library can be found from Github repository. The library is available on PyPI. Contents: Getting started- Logging, Installation, Fetching the filings, Multifilters, Filings for ..." />
+<meta name="description" content="Source code for the library can be found from Github repository. The library is available on PyPI. Contents: Getting started- Logging, Installation, Fetching the filings, Multifilters, Filings for ..." />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Getting started" href="getting-started.html" />
 
-    <!-- Generated with Sphinx 7.3.7 and Furo 2024.01.29 -->
-        <title>xbrl-filings-api 1.0a1 documentation</title>
+    <!-- Generated with Sphinx 7.3.7 and Furo 2024.04.27 -->
+        <title>XBRL Filings API Documentation 1.0a1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=437aa6ec" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     
     
@@ -114,6 +119,8 @@
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
 
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
 
 
 <div class="page">
@@ -125,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">xbrl-filings-api 1.0a1 documentation</div></a>
+      <a href="#"><div class="brand">XBRL Filings API Documentation 1.0a1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +155,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
   
   
-  <span class="sidebar-brand-text">xbrl-filings-api 1.0a1 documentation</span>
+  <span class="sidebar-brand-text">XBRL Filings API Documentation 1.0a1 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -160,6 +167,7 @@
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reporting-date-or-last-end-date.html">Using reporting_date or last_end_date</a></li>
 <li class="toctree-l1"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changing-year-filter-scope.html">Changing year filter scope</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api-reference.html">API reference</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of API reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.query.html">query</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.Filing.html">Filing</a></li>
@@ -177,7 +185,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.SQLiteView.html">SQLiteView</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.constants.html">constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.ScopeFlag.html">ScopeFlag</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.DEFAULT_VIEWS.html">DEFAULT_VIEWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.default_views.html">default_views</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.exceptions.html">exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.options.html">options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.stats.html">stats</a></li>
@@ -237,17 +245,29 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <section id="welcome-to-xbrl-filings-api-s-documentation">
-<h1>Welcome to xbrl-filings-api’s documentation!<a class="headerlink" href="#welcome-to-xbrl-filings-api-s-documentation" title="Link to this heading">¶</a></h1>
+<h1>Welcome to XBRL Filings API’s documentation!<a class="headerlink" href="#welcome-to-xbrl-filings-api-s-documentation" title="Link to this heading">¶</a></h1>
+<p>Source code for the library can be found from <a class="reference external" href="https://github.com/lsalmela/xbrl-filings-api">Github repository</a>. The
+library is available on <a class="reference external" href="https://pypi.org/project/xbrl-filings-api">PyPI</a>.</p>
 <section id="contents">
 <h2>Contents<a class="headerlink" href="#contents" title="Link to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#logging">Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#fetching-the-filings">Fetching the filings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#multifilters">Multifilters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting-started.html#filings-for-a-financial-year">Filings for a financial year</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#filings-for-a-fiscal-year">Filings for a fiscal year</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#filings-for-a-month">Filings for a month</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#downloading-filings">Downloading filings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#opening-filings-in-web-browser">Opening filings in web browser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#saving-objects-to-sqlite-database">Saving objects to SQLite database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#exporting-objects-to-pandas-dataframe">Exporting objects to pandas dataframe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#filtering-out-redundant-languages">Filtering out redundant languages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#explicit-paging">Explicit paging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#query-match-size">Query match size</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#apiobject-inheritance-hierarchy">APIObject inheritance hierarchy</a></li>
 </ul>
 </li>
@@ -257,6 +277,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changing-year-filter-scope.html">Changing year filter scope</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api-reference.html">API reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.query.html">query</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.Filing.html">Filing</a></li>
@@ -274,7 +295,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.SQLiteView.html">SQLiteView</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.constants.html">constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.ScopeFlag.html">ScopeFlag</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.DEFAULT_VIEWS.html">DEFAULT_VIEWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.default_views.html">default_views</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.exceptions.html">exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.options.html">options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.stats.html">stats</a></li>
@@ -296,6 +317,7 @@
 </section>
 <section id="navigation">
 <h2>Navigation<a class="headerlink" href="#navigation" title="Link to this heading">¶</a></h2>
+<p>The following keyboard shortcuts are defined in the documentation:</p>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <tbody>
@@ -364,7 +386,7 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Welcome to xbrl-filings-api’s documentation!</a><ul>
+<li><a class="reference internal" href="#">Welcome to XBRL Filings API’s documentation!</a><ul>
 <li><a class="reference internal" href="#contents">Contents</a></li>
 <li><a class="reference internal" href="#navigation">Navigation</a></li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
@@ -382,6 +404,8 @@
 </div><script src="_static/documentation_options.js?v=036e6a88"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="_static/scripts/furo.js?v=4e2eecee"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=6dbb43f8"></script>
     </body>
 </html>

@@ -24,4 +24,5 @@
       ~JSONTree.unexpected_resource_types
       ~JSONTree.class_name
       ~JSONTree.tree
+      ~JSONTree.request_url
       ~JSONTree.do_not_track

@@ -1,5 +1,8 @@
+:og:description: Explanation of basic functionalities of the library using examples
+
 .. _include parameter: https://jsonapi.org/format/1.0/#fetching-includes
 .. _GLEIF foundation search: https://search.gleif.org
+.. _xBRL-JSON format: https://www.xbrl.org/guidance/xbrl-json-tutorial/
 
 Getting started
 ===============
@@ -14,15 +17,37 @@ With regards to :abbr:`ESEF (European Single Electronic Format)`
 filings, the term *entity* is used instead of *issuer*, as this is the
 term used in the API, the library, and XBRL in general.
 
+.. _logging:
+
+Logging
+-------
+
+If you are running the commands in Python interactive prompt, you may
+enable logging on console with the following command::
+
+    import logging, sys
+    logging.basicConfig(stream=sys.stdout, level=logging.INFO)
+
+The examples below show the output without logging.
+
+Installation
+------------
+
+Install the library using pip.
+
+.. code-block:: console
+
+    python -m pip install xbrl-filings-api
+
 Fetching the filings
 --------------------
 
 The API natively supports two means of fetching the desired filings.
 These are equality-based filtering and sorting. The following query
 fetches three oldest Finnish filings in the database using the
-`get_filings()` function:
+`get_filings()` function::
 
->>> fs = xf.get_filings({'country': 'FI'}, sort='added_time', limit=3)
+    fs = xf.get_filings({'country': 'FI'}, sort='added_time', limit=3)
 
 The first ``filters`` parameter value demands the API to return only
 filings whose field ``'country'`` is the country code of Finland,
@@ -36,23 +61,25 @@ is large.
 
 Default sort order is ascending. To reverse the sort order, use minus
 sign in the front of the sort field. The latest added records are thus
-requested:
+requested::
 
->>> fs = xf.get_filings({'country': 'FI'}, sort='-added_time', limit=3)
+    fs = xf.get_filings({'country': 'FI'}, sort='-added_time', limit=3)
 
 The returned object is a `FilingSet` which is a :class:`set`\ -like
 object containing `Filing` objects. All set operations (methods and
 operators) are supported and they are not dependent on the filing object
-identity. In other words, you can for example take a union of the
-results of two separate queries and if they contain same filings, these
-filings are handled intuitively, having no duplicates in the output.
-However in-place operations (e.g. `FilingSet.intersection_update()`) are
-recommended intead of new set operations (e.g.
-`FilingSet.intersection()`) to limit the number of deep copied objects.
+identity. In other words, you can make a union of the results of two
+separate queries and if they contain same filings, these filings are
+handled intuitively, having no duplicates of the same filing in the
+union set. However in-place operations (e.g.
+`FilingSet.intersection_update()`) are recommended intead of new set
+operations (e.g. `FilingSet.intersection()`) to limit the number of deep
+copied objects.
 
 The library provides convenient :func:`repr` and :class:`str() <str>`
-representations for all `APIResource` objects, i.e., filings, entities
-and validation messages.
+representations for all `APIResource` objects, i.e., filings, entities,
+and validation messages. Use ``repr()`` if you need the unique
+identifier ``api_id``.
 
 >>> for filing in fs:
 ...     print(filing)
@@ -64,7 +91,7 @@ and validation messages.
 However, as shown above, querying the sole filings does not reproduce
 very easily comprehended ``str()`` values. The above rows show
 `Filing.filing_index` instead of `Entity.name`. To see the latter, we
-must query again but now including the entities in our results setting
+must query again but now include the entities in our results setting
 parameter ``flags`` to `GET_ENTITY`:
 
 >>> fs = xf.get_filings({'country': 'FI'}, sort='-added_time', limit=3, flags=xf.GET_ENTITY)
@@ -76,8 +103,16 @@ Scanfil Oyj 2023 [fi]
 Aspocomp Group Oyj 2023 [fi]
 
 The above call to ``get_filings()`` still only produces a single request
-to the API but take advantage of the JSON:API `include parameter`_. See
-`Filing.__str__` for the full explanation of ``str()`` format.
+to the API but take advantage of the JSON:API `include parameter`_.
+
+The entity of a filing can be accessed with attribute `Filing.entity`.
+To get validation messages, use flag `GET_VALIDATION_MESSAGES`. The
+entity and validation message flags can be combined with ``|`` operator,
+but a shorthand ``GET_ALL`` also exists. The validation messages can be
+then accessed with attribute `Filing.validation_messages`.
+
+See `Filing.__str__`, `Entity.__str__`, and `ValidationMessage.__str__`
+for the full explanation of ``str()`` format.
 
 Multifilters
 ------------
@@ -100,21 +135,22 @@ KONE OYJ 2022 [fi]
 KONE OYJ 2022 [en]
 Nokia Oyj 2022 [fi]
 
-More than one filter can have iterable value. You can find LEI codes for
-example with the `GLEIF foundation search`_.
+More than one filter can have an iterable value. You can find LEI codes
+for example with the `GLEIF foundation search`_.
 
-Filings for a financial year
-----------------------------
+Filings for a fiscal year
+-------------------------
 
 The `Filing` objects have two attributes for the filing date, i.e., the
-end of the fiscal year of the reporting period. These are
-`last_end_date` and `reporting_date`. For most filings, they are the
-same value, but in certain cases they differ. For a detailed
-explanation, see :doc:`reporting-date-or-last-end-date`.
+end of the fiscal year of the reporting period. Some countries also
+report quarterly reports with XBRL (see :doc:`database`). The filing
+date attributes are `last_end_date` and `reporting_date`. For most
+filings, they are the same value, but in certain cases they differ. For
+a detailed explanation, see :doc:`reporting-date-or-last-end-date`.
 
 What comes to querying, the most pronounced difference is that
-``last_end_date`` can be used for querying where as the derived
-attribute ``reporting_date`` can not.
+``last_end_date`` can be used for querying whereas the derived attribute
+``reporting_date`` can not.
 
 So, were we interested in querying for Norwegian filings whose reporting
 period ends on 31 December 2022, we would use the following call:
@@ -145,38 +181,17 @@ SAS AB Oct-2022 [sv]
 Navig8 Topco Holdings Inc Mar-2022
 STOLT-NIELSEN LIMITED Nov-2022 [en]
 
-The scope of the year filter is defined in `options.year_filter_months`
-and its default value is::
+For specialized year filter queries, see
+:doc:`changing-year-filter-scope`.
 
-    ((0, 1),
-     (1, 1))
+.. note::
 
-Option ``year_filter_months`` is a tuple of two tuples. The inner tuples
-consist of two integers: year offset and month number. The last month is
-non-inclusive (as with Python :class:`range() <range>` iterator).
-Therefore, the default year filter for ``2022`` returns filings whose
-``last_end_date`` is any last day of month from 31 January 2022 until 31
-December 2022.
+    All fields ending ``"_date"`` can also be queried with
+    :class:`datetime.date` objects. Year query can be made with either
+    ``str`` or ``int``.
 
-You might also be interested in fiscal years ending around the end of
-calendar year. To query Norwegian filings around the end of year 2022
-(30 June 2022 to 31 May 2023), use the following:
-
->>> xf.options.year_filter_months = ((0, 6), (1, 6))
->>> fs = xf.get_filings(
-...     filters={'country': 'NO', 'last_end_date': 2022},
-...     sort='last_end_date', limit=3, flags=xf.GET_ENTITY)
->>> for filing in fs:
-...     print(filing)
-...
-MEDISTIM ASA 2022 [en]
-STOLT-NIELSEN LIMITED Nov-2022 [en]
-SAS AB Oct-2022 [sv]
-
-Notice that filing *Navig8 Topco Holdings Inc Mar-2022* disappeared.
-
-To query all month end dates in three years, you can set
-``year_filter_months`` to ``((0, 1), (2, 12))``.
+Filings for a month
+-------------------
 
 It is also possible to filter with month which will make a query to the
 last day of the month. The following queries for filings with reporting
@@ -184,11 +199,208 @@ period ending on 28 February 2022::
 
     fs = xf.get_filings({'last_end_date': '2022-02'}, flags=xf.GET_ENTITY)
 
-.. note::
+The following queries for the 2022 second quarter month end dates in
+Denmark using a :external:term:`list comprehension`. Notice that leading
+zeroes in the month part are not required. This is an alternative to
+changing year filter scope.
 
-    All fields ending ``'_date'`` can also be queried with
-    :class:`datetime.date` objects. Year query can be made with
-    ``str`` or ``int`` and month query with ``str``.
+>>> fs = xf.get_filings(
+...     filters={
+...         'last_end_date': [f'2022-{mth}' for mth in range(4, 7)],
+...         'country': 'DK'},
+...     flags=xf.GET_ENTITY)
+>>> for filing in fs:
+...     print(filing)
+... 
+Frontmatec Group ApS Jun-2022 [en]
+PENNEO A/S Jun-2022 [en]
+Gabriel Holding A/S Jun-2022 [da]
+(... 70 filings)
+Pandora A/S Jun-2022 [en]
+ØRSTED A/S Jun-2022 [en]
+ISS GLOBAL A/S Jun-2022 [en]
+
+Downloading filings
+-------------------
+
+Lets say we have made a successful query and stored the `FilingSet`
+object in a variable named ``fs``. We want to save the filings in
+`xBRL-JSON format`_ to folder ``'path/to/json'``. We can save them
+with the method :meth:`FilingSet.download`::
+
+    fs = xf.get_filings({'country': 'FI'}, sort='-added_time', limit=3)
+    fs.download('json', to_dir='path/to/json')
+
+The available download files are listed below. The local path attribute
+is set when download is finished. Detailed documentation is found from
+URL attribute.
+
+=============  =============  =======================
+File string    URL attribute  Local path attribute
+=============  =============  =======================
+``'json'``     `json_url`     `json_download_path`
+``'package'``  `package_url`  `package_download_path`
+``'xhtml'``    `xhtml_url`    `xhtml_download_path`
+=============  =============  =======================
+
+It is also possible to download multiple types of files at once::
+
+    fs.download(['json', 'package'], to_dir='path/to/json')
+
+We may also override the save folder and define a renaming pattern for
+filename using `DownloadItem` objects::
+
+    fs.download({
+        'xhtml': xf.DownloadItem(
+            stem_pattern='/name/_graphic',
+            to_dir='path/to/xhtml'),
+        'json': xf.DownloadItem(
+            stem_pattern='/name/_data',
+            to_dir='path/to/json')
+        })
+
+For XHTML report files, the above renames ``'file.xhtml'`` to
+``'file_graphic.xhtml'``, saves it to ``'path/to/xhtml'``. The advantage
+of the above approach compared to two separate calls is that
+``download()`` method downloads files in parallel and a long final
+download in the first call would create needless waiting time for the
+second call. By default, maximum of 5 parallel downloads are allowed
+at any moment during downloading. Change this with parameter
+``max_concurrent``.
+
+The `Filing` object also has the same downloading interface::
+
+    filing = next(iter(fs))
+    filing.download('json', to_dir='path/to/json')
+
+``Filing`` downloads additionally allow complete renaming of the
+downloaded file::
+
+    filing.download(
+        {'xhtml': xf.DownloadItem(filename='new_name.html')},
+        to_dir='path/to/html')
+
+For timely feedback of finished downloads, methods
+`FilingSet.download_aiter()` and `Filing.download_aiter()` return an
+asynchronous iterator which yields `DownloadResult` objects. In this
+example output, :ref:`logging to sys.stdout is turned on <logging>`.
+
+>>> import asyncio
+>>> fs = xf.get_filings({'api_id': ['4143', '8542', '2302']}, flags=xf.GET_ENTITY)
+(... log messages)
+>>> async def dl_feedback(fs):
+...     async for result in fs.download_aiter('package', to_dir='dl_aiter'):
+...         if result.err:
+...             print(
+...                 f'Error downloading {result.info.file} for '
+...                 f'{result.info.obj} from {result.url}\n'
+...                 f'{result.err}')
+...             continue
+...         print(
+...             f'Downloaded {result.info.file} for {result.info.obj}\n'
+...             f'> {result.path}')
+... 
+>>> asyncio.run(dl_feedback(fs))
+WARNING:xbrl_filings_api.download_specs_construct:Package not available for Filing(api_id='8542', entity.name='Приватне Акціонерне Товариство «Рено Україна»', reporting_date=date(2022, 12, 31), language=None)
+Downloaded package for SOC CENTRALE BOIS SCIERIES MANCHE Jun-2022 [fr]
+> C:\Users\user\path\dl_aiter\SCBSM-2022-06-30-fr.zip
+Downloaded package for KONE OYJ 2022 [en]
+> C:\Users\user\path\dl_aiter\2138001CNF45JP5XZK38-2022-12-31-EN.zip
+
+The library logs a warning for a missing package file.
+
+Opening filings in web browser
+------------------------------
+
+A `Filing` can also be opened in web browser with `open` method. The
+default is to open the iXBRL viewer (`viewer_url`).
+
+>>> kone22en = next(f for f in fs if f.entity.name == 'KONE OYJ')
+>>> kone22en.open()
+
+The viewer application is sometimes slow to open. If you want to open
+the original static XHTML document (`xhtml_url`), set
+`options.open_viewer` to :pt:`False`.
+
+>>> xf.options.open_viewer = False
+>>> kone22en.open()
+
+Saving objects to SQLite database
+---------------------------------
+
+You can export the objects to an SQLite database with function
+:func:`~xbrl_filings_api.query.to_sqlite` or method
+`FilingSet.to_sqlite()`. The function both queries and inserts the
+objects to the database for each page. The method only inserts into a
+new database. If you want to update new records to an existing database,
+you must set paramter ``update`` to :pt:`True`.
+
+>>> xf.to_sqlite(
+...     path='filings.sqlite',
+...     filters={'country': 'FI', 'last_end_date': '2022-12'},
+...     flags=xf.GET_ALL)
+
+A few `SQLite views <default_views>` are also included in the database
+by default.
+
+Exporting objects to pandas dataframe
+-------------------------------------
+
+It is possible to generate a dict for :class:`pandas.DataFrame` ``data``
+attribute with methods `FilingSet.get_pandas_data()` and
+`ResourceCollection.get_pandas_data()`. To get a dataframe for
+validation messages. The attributes ending ``_url`` are not included by
+default:
+
+>>> import pandas as pd
+>>> fs = xf.get_filings({'country': 'FI'}, sort='-added_time', limit=3, flags=xf.GET_ALL)
+>>> vm_data = fs.validation_messages.get_pandas_data()
+>>> df = pd.DataFrame(vm_data)
+
+Filtering out redundant languages
+---------------------------------
+
+You can filter out redundant language versions of the same filing with
+`pop_duplicates()`. By default, it prefers filings in English. To get
+filings preferably in English and secondarily in Finnish:
+
+>>> fs.pop_duplicates(['en', 'fi'])
+
+Explicit paging
+---------------
+
+It is possible to handle the pages explicitly with function
+`filing_page_iter`. The order of filings on a page is then retained as
+they are returned in a list. The iterator is lazy and makes requests to
+the API only when next page is called. As with other query functions,
+the maximum page size can be controlled with `options.max_page_size`.
+
+>>> xf.options.max_page_size = 3
+>>> page_iter = xf.filing_page_iter({'country': 'SE'}, sort='-added_time', flags=xf.GET_ENTITY)
+>>> for page in page_iter:
+...     for filing in page.filing_list:
+...         print(filing)
+...     break
+...
+MedCap AB (publ) 2023 [sv]
+Ortivus Aktiebolag 2023 [sv]
+AddLife AB 2023 [sv]
+
+In rare occasions the API returns the same filing on a subsequent page.
+For this reason it must not be relied upon that every page before the
+last has exactly ``max_page_size`` filings as the same filing is always
+returned once.
+
+Query match size
+----------------
+
+It is possible to get the number of filings matched by the query without
+going through all the pages with function `filing_page_iter`. To see how
+many filings there are in the database filed in Sweden you can use
+attribute `FilingsPage.query_filing_count`::
+
+>>> page = next(xf.filing_page_iter({'country': 'SE'}, limit=1))
+>>> print(f'{page.query_filing_count} filings from Sweden')
 
 APIObject inheritance hierarchy
 -------------------------------

@@ -2,14 +2,36 @@ Documentation conventions
 =========================
 
 The library uses NumPy style docstrings. Parameter names are, however,
-enclosed in double backticks (````param````) instead of single ones
-(```param```) due to Sphinx default domain being ``any``. Single
-backticks would lead to errors in resolving the reference.
+enclosed in double backticks instead of single ones due to Sphinx
+default domain being ``any``. Single backticks would lead to errors in
+resolving the reference.
+
+In RST documentation:
+
+- Quote callable ````parameter````
+- Quote complete string::
+
+    ``'json'``
+
+- Quote part of string::
+
+    ``"_time"``
+
+- Quote ```member``` of class
+
+In markdown:
+
+- Quote callable ```parameter```
+- Quote ```'json'``` complete string
+- Quote ```"_time"``` part of string
+- Quote ```member``` of class
+
+Never use backticks in log or exception messages. Parameter names are
+surrounded by single quotes.
 
 Each name in the API such as class or function is cross-referenced with
 a link only once within the same second level section (sections with
-hyphen underline). Later mentions are simple
-````inline literals````.
+hyphen underline). Later mentions are simple ````inline literals````.
 
 XHTML is written with a capital 'X' as spelled in the
 `original XHTML 1.0 specification <https://www.w3.org/TR/xhtml1/>`_.
@@ -19,11 +41,6 @@ more than three capital letters nevertheless.
 The special constants :pt:`None`, :pt:`True` and :pt:`False` are used
 with role ``pt`` to signify inline Python code formatting. E.g.
 ``:pt:`None```.
-
-Single quotes are used everywhere in the library except for non-code
-literal strings in docstrings and log messages. Python names such as
-parameter names are surrounded by single quotes in log messages and
-double backquotes in docstrings.
 
 Public superclass members always cross-reference their own class name in
 the short summaries of docstrings. This ensures subclasses have required
@@ -39,9 +56,9 @@ ordered according to :func:`order_columns` order if they are subclasses
 of `APIResource`, otherwise alphabetically. Special methods are always
 ordered after public methods.
 
-Order methods in groups and prefer alphabetic ordering (custom order if
-seems awkward, especially regarding dataclasses). Groups should be in
-the following order:
+Order members and methods in groups and prefer alphabetic ordering
+(custom order if seems awkward, especially when small number of
+members). Groups of methods should be in the following order:
 
 1. Static methods
 2. Class methods
@@ -72,7 +89,8 @@ Definition of private
 
 The private prefix (underscore) is used in the scope of the object to
 define members which should not be accessed outside of the object. The
-scope of this rule begins from module members.
+scope of this rule begins from module members. Module names are never
+prefixed.
 
 Consequently, an underscore-prefixed class is internal to the module, a
 prefixed attribute is internal to the class etc.

@@ -3,14 +3,17 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="Documentation for Python library xbrl-filings-api" name="description" />
-<meta content="XBRL, ESEF, IFRS" name="keywords" />
+<meta property="og:title" content="FilingSet" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://lsalmela.github.io/xbrl-filings-api/api/xbrl_filings_api.FilingSet.html" />
+<meta property="og:site_name" content="XBRL Filings API Documentation" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="ResourceCollection" href="xbrl_filings_api.ResourceCollection.html" /><link rel="prev" title="APIError" href="xbrl_filings_api.APIError.html" />
 
-    <!-- Generated with Sphinx 7.3.7 and Furo 2024.01.29 -->
-        <title>FilingSet - xbrl-filings-api 1.0a1 documentation</title>
+    <!-- Generated with Sphinx 7.3.7 and Furo 2024.04.27 -->
+        <title>FilingSet - XBRL Filings API Documentation 1.0a1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=437aa6ec" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
     
     
@@ -114,6 +117,8 @@
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
 
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
 
 
 <div class="page">
@@ -125,7 +130,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">xbrl-filings-api 1.0a1 documentation</div></a>
+      <a href="../index.html"><div class="brand">XBRL Filings API Documentation 1.0a1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +153,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">xbrl-filings-api 1.0a1 documentation</span>
+  <span class="sidebar-brand-text">XBRL Filings API Documentation 1.0a1 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -160,6 +165,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reporting-date-or-last-end-date.html">Using reporting_date or last_end_date</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changing-year-filter-scope.html">Changing year filter scope</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../api-reference.html">API reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of API reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.query.html">query</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.Filing.html">Filing</a></li>
@@ -177,7 +183,7 @@
 <li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.SQLiteView.html">SQLiteView</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.constants.html">constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.ScopeFlag.html">ScopeFlag</a></li>
-<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.DEFAULT_VIEWS.html">DEFAULT_VIEWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.default_views.html">default_views</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.exceptions.html">exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.options.html">options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.stats.html">stats</a></li>
@@ -237,7 +243,7 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <section id="filingset">
 <h1>FilingSet<a class="headerlink" href="#filingset" title="Link to this heading">¶</a></h1>
 <dl class="py class">
@@ -412,12 +418,12 @@ contains any item other than a filing. However, operators <code class="docutils 
 <span class="sig-name descname"><span class="pre">download</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">files</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stem_pattern</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_corruption</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_concurrent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xbrl_filings_api.FilingSet.download" title="Link to this definition">¶</a></dt>
 <dd><p>Download files according to parameter <code class="docutils literal notranslate"><span class="pre">files</span></code>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">files</span></code> parameter accepts three formats:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;json&#39;</span><span class="p">)</span>
-<span class="n">fs</span><span class="o">.</span><span class="n">download</span><span class="p">([</span><span class="s1">&#39;json&#39;</span><span class="p">,</span> <span class="s1">&#39;package&#39;</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;json&#39;</span><span class="p">,</span> <span class="n">to_dir</span><span class="o">=</span><span class="s1">&#39;dir/path&#39;</span><span class="p">)</span>
+<span class="n">fs</span><span class="o">.</span><span class="n">download</span><span class="p">([</span><span class="s1">&#39;json&#39;</span><span class="p">,</span> <span class="s1">&#39;package&#39;</span><span class="p">],</span> <span class="n">to_dir</span><span class="o">=</span><span class="s1">&#39;dir/path&#39;</span><span class="p">)</span>
 <span class="n">fs</span><span class="o">.</span><span class="n">download</span><span class="p">({</span>
         <span class="s1">&#39;json&#39;</span><span class="p">:</span> <span class="n">DownloadItem</span><span class="p">(),</span>
         <span class="s1">&#39;package&#39;</span><span class="p">:</span> <span class="n">DownloadItem</span><span class="p">(</span><span class="n">to_dir</span><span class="o">=</span><span class="n">other_dir</span><span class="p">)</span>
-    <span class="p">},</span> <span class="n">to_dir</span><span class="p">)</span>
+    <span class="p">},</span> <span class="n">to_dir</span><span class="o">=</span><span class="s1">&#39;dir/path&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The filesystem path of the downloaded file will be saved in the
@@ -431,7 +437,7 @@ calculated from the downloaded files, an exception
 <a class="reference internal" href="xbrl_filings_api.exceptions.html#xbrl_filings_api.exceptions.CorruptDownloadError" title="xbrl_filings_api.exceptions.CorruptDownloadError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">CorruptDownloadError</span></code></a> of the
 first corrupt file is raised after all downloads have finished.
 The downloaded files will not be deleted but the filenames will
-be appended with ending “.corrupt”. However, attributes
+be appended with ending <code class="docutils literal notranslate"><span class="pre">&quot;.corrupt&quot;</span></code>. However, attributes
 <a class="reference internal" href="xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.package_download_path" title="xbrl_filings_api.Filing.package_download_path"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">Filing.package_download_path</span></code></a> will not store these corrupt
 paths.</p>
 <p>The directories in the path of parameter <code class="docutils literal notranslate"><span class="pre">to_dir</span></code> will be
@@ -439,11 +445,11 @@ created if they do not exist. By default, filename is derived
 from download URL. If the file already exists, it will be
 overwritten.</p>
 <p>If download is interrupted, the files will be left with ending
-“.unfinished”.</p>
+<code class="docutils literal notranslate"><span class="pre">&quot;.unfinished&quot;</span></code>.</p>
 <p>If no name could be derived from the url attribute, the file
 will be named <code class="docutils literal notranslate"><span class="pre">file0001</span></code>, <code class="docutils literal notranslate"><span class="pre">file0002</span></code>, etc. In this case a
 new file is always created.</p>
-<p>Parameter <code class="docutils literal notranslate"><span class="pre">stem_pattern</span></code> requires a placeholder “/name/”.
+<p>Parameter <code class="docutils literal notranslate"><span class="pre">stem_pattern</span></code> requires a placeholder <code class="docutils literal notranslate"><span class="pre">&quot;/name/&quot;</span></code>.
 For example pattern <code class="docutils literal notranslate"><span class="pre">/name/_second_try</span></code> will change original
 filename <code class="docutils literal notranslate"><span class="pre">743700XJC24THUPK0S03-2022-12-31-fi.xhtml</span></code> into
 <code class="docutils literal notranslate"><span class="pre">743700XJC24THUPK0S03-2022-12-31-fi_second_try.xhtml</span></code>. Not
@@ -456,8 +462,8 @@ recommended for packages as their names should not be changed.</p>
 literals. <a class="reference internal" href="xbrl_filings_api.DownloadItem.html#xbrl_filings_api.DownloadItem" title="xbrl_filings_api.DownloadItem"><code class="xref any py py-class docutils literal notranslate"><span class="pre">DownloadItem</span></code></a> attributes override method
 arguments for the file.</p></li>
 <li><p><strong>to_dir</strong> (<em>path-like</em><em>, </em><em>optional</em>) – Directory to save the files. Defaults to working directory.</p></li>
-<li><p><strong>stem_pattern</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>, </em><em>optional</em>) – Pattern to add to the filename stems. Placeholder “/name/”
-is always required.</p></li>
+<li><p><strong>stem_pattern</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>, </em><em>optional</em>) – Pattern to add to the filename stems. Placeholder
+<code class="docutils literal notranslate"><span class="pre">&quot;/name/&quot;</span></code> is always required.</p></li>
 <li><p><strong>check_corruption</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a><em>, </em><em>default True</em>) – Raise
 <a class="reference internal" href="xbrl_filings_api.exceptions.html#xbrl_filings_api.exceptions.CorruptDownloadError" title="xbrl_filings_api.exceptions.CorruptDownloadError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">CorruptDownloadError</span></code></a> for
 any corrupt <code class="docutils literal notranslate"><span class="pre">'package'</span></code> file.</p></li>
@@ -500,8 +506,8 @@ documentation.</p>
 literals. <a class="reference internal" href="xbrl_filings_api.DownloadItem.html#xbrl_filings_api.DownloadItem" title="xbrl_filings_api.DownloadItem"><code class="xref any py py-class docutils literal notranslate"><span class="pre">DownloadItem</span></code></a> attributes override method
 arguments for the file.</p></li>
 <li><p><strong>to_dir</strong> (<em>path-like</em><em>, </em><em>optional</em>) – Directory to save the files. Defaults to working directory.</p></li>
-<li><p><strong>stem_pattern</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>, </em><em>optional</em>) – Pattern to add to the filename stems. Placeholder “/name/”
-is always required.</p></li>
+<li><p><strong>stem_pattern</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>, </em><em>optional</em>) – Pattern to add to the filename stems. Placeholder
+<code class="docutils literal notranslate"><span class="pre">&quot;/name/&quot;</span></code> is always required.</p></li>
 <li><p><strong>check_corruption</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a><em>, </em><em>default True</em>) – Raise
 <a class="reference internal" href="xbrl_filings_api.exceptions.html#xbrl_filings_api.exceptions.CorruptDownloadError" title="xbrl_filings_api.exceptions.CorruptDownloadError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">CorruptDownloadError</span></code></a> for
 any corrupt <code class="docutils literal notranslate"><span class="pre">'package'</span></code> file.</p></li>
@@ -1076,6 +1082,8 @@ in both.</p>
 </div><script src="../_static/documentation_options.js?v=036e6a88"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/scripts/furo.js?v=4e2eecee"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=6dbb43f8"></script>
     </body>
 </html>

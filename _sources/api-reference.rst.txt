@@ -25,7 +25,7 @@ link, the member is inherited from a parent class.
    xbrl_filings_api.SQLiteView
    xbrl_filings_api.constants
    xbrl_filings_api.ScopeFlag
-   xbrl_filings_api.DEFAULT_VIEWS
+   xbrl_filings_api.default_views
    xbrl_filings_api.exceptions
    xbrl_filings_api.options
    xbrl_filings_api.stats

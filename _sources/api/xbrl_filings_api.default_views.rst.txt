@@ -1,0 +1,13 @@
+﻿default\_views
+==============
+
+.. automodule:: xbrl_filings_api.default_views
+
+   .. rubric:: Module Attributes
+
+   .. autosummary::
+   
+      DEFAULT_VIEWS
+      ViewEnclosure
+      ViewFilingAge
+      ViewNumericErrors

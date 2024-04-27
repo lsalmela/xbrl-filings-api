@@ -3,14 +3,19 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="Documentation for Python library xbrl-filings-api" name="description" />
-<meta content="XBRL, ESEF, IFRS" name="keywords" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="API reference" href="api-reference.html" /><link rel="prev" title="Using reporting_date or last_end_date" href="reporting-date-or-last-end-date.html" />
+<meta property="og:title" content="Database" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://lsalmela.github.io/xbrl-filings-api/database.html" />
+<meta property="og:site_name" content="XBRL Filings API Documentation" />
+<meta property="og:description" content="As of April 2024, the database has filings filed according to the European Single Electronic Format(ESEF), the United Kingdom Single Electronic Format(UKSEF), and the Ukraine Financial Reporting Sy..." />
+<meta name="description" content="As of April 2024, the database has filings filed according to the European Single Electronic Format(ESEF), the United Kingdom Single Electronic Format(UKSEF), and the Ukraine Financial Reporting Sy..." />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Changing year filter scope" href="changing-year-filter-scope.html" /><link rel="prev" title="Using reporting_date or last_end_date" href="reporting-date-or-last-end-date.html" />
 
-    <!-- Generated with Sphinx 7.3.7 and Furo 2024.01.29 -->
-        <title>Database - xbrl-filings-api 1.0a1 documentation</title>
+    <!-- Generated with Sphinx 7.3.7 and Furo 2024.04.27 -->
+        <title>Database - XBRL Filings API Documentation 1.0a1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=437aa6ec" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     
     
@@ -114,6 +119,8 @@
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
 
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
 
 
 <div class="page">
@@ -125,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">xbrl-filings-api 1.0a1 documentation</div></a>
+      <a href="index.html"><div class="brand">XBRL Filings API Documentation 1.0a1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +155,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">xbrl-filings-api 1.0a1 documentation</span>
+  <span class="sidebar-brand-text">XBRL Filings API Documentation 1.0a1 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -160,6 +167,7 @@
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reporting-date-or-last-end-date.html">Using reporting_date or last_end_date</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changing-year-filter-scope.html">Changing year filter scope</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api-reference.html">API reference</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of API reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.query.html">query</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.Filing.html">Filing</a></li>
@@ -177,7 +185,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.SQLiteView.html">SQLiteView</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.constants.html">constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.ScopeFlag.html">ScopeFlag</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.DEFAULT_VIEWS.html">DEFAULT_VIEWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.default_views.html">default_views</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.exceptions.html">exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.options.html">options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/xbrl_filings_api.stats.html">stats</a></li>
@@ -237,15 +245,26 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <section id="database">
 <h1>Database<a class="headerlink" href="#database" title="Link to this heading">¶</a></h1>
+<p>As of April 2024, the database has filings filed according to the
+<em>European Single Electronic Format</em> (ESEF), the <em>United Kingdom Single
+Electronic Format</em> (UKSEF), and the <em>Ukraine Financial Reporting
+System</em>. The first reports are from financial year 2020 for all
+reporting formats.</p>
+<p>Annual reports are reported from every country with reports filed. As
+for the filings reported in 2022, Danish and Ukrainian filings also
+include quarterly reports.</p>
+<p>Regarding ESEF, the European Union countries without any filings in the
+database are Germany, Ireland, Bulgaria, and Slovakia.</p>
 <p>Different language versions of the same report are separate filings.
 Sometimes the exactly same report is filed twice due to errors in the
-version filed earlier. Some entities also report on multiple markets
-(different countries/stock exchanges). In the case of language versions
-or same market refilings, the reports have the same <a class="reference internal" href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.filing_index" title="xbrl_filings_api.Filing.filing_index"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">filing_index</span></code></a>
-except for the last integer.</p>
+version filed earlier. Use <a class="reference internal" href="api/xbrl_filings_api.FilingSet.html#xbrl_filings_api.FilingSet.pop_duplicates" title="xbrl_filings_api.FilingSet.pop_duplicates"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">pop_duplicates()</span></code></a> to get the lastest
+reported unique enclosure with language preference. Some entities also
+report on multiple markets (different countries/stock exchanges). In the
+case of language versions or same market refilings, the reports have the
+same <a class="reference internal" href="api/xbrl_filings_api.Filing.html#xbrl_filings_api.Filing.filing_index" title="xbrl_filings_api.Filing.filing_index"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">filing_index</span></code></a> except for the entry number (last integer).</p>
 </section>
 
         </article>
@@ -253,12 +272,12 @@ except for the last integer.</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="api-reference.html">
+          <a class="next-page" href="changing-year-filter-scope.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">API reference</div>
+                <div class="title">Changing year filter scope</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -300,6 +319,8 @@ except for the last integer.</p>
 </div><script src="_static/documentation_options.js?v=036e6a88"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="_static/scripts/furo.js?v=4e2eecee"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=6dbb43f8"></script>
     </body>
 </html>

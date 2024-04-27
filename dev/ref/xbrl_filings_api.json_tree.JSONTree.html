@@ -3,14 +3,17 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="Documentation for Python library xbrl-filings-api" name="description" />
-<meta content="XBRL, ESEF, IFRS" name="keywords" />
+<meta property="og:title" content="json_tree.JSONTree" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://lsalmela.github.io/xbrl-filings-api/dev/ref/xbrl_filings_api.json_tree.JSONTree.html" />
+<meta property="og:site_name" content="XBRL Filings API Documentation" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="lang_code_transform" href="xbrl_filings_api.lang_code_transform.html" /><link rel="prev" title="download_specs_construct" href="xbrl_filings_api.download_specs_construct.html" />
 
-    <!-- Generated with Sphinx 7.3.7 and Furo 2024.01.29 -->
-        <title>json_tree.JSONTree - xbrl-filings-api 1.0a1 documentation</title>
+    <!-- Generated with Sphinx 7.3.7 and Furo 2024.04.27 -->
+        <title>json_tree.JSONTree - XBRL Filings API Documentation 1.0a1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=437aa6ec" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
     
     
@@ -114,6 +117,8 @@
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
 
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
 
 
 <div class="page">
@@ -125,7 +130,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">xbrl-filings-api 1.0a1 documentation</div></a>
+      <a href="../../index.html"><div class="brand">XBRL Filings API Documentation 1.0a1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +153,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
   
-  <span class="sidebar-brand-text">xbrl-filings-api 1.0a1 documentation</span>
+  <span class="sidebar-brand-text">XBRL Filings API Documentation 1.0a1 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -160,6 +165,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../getting-started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reporting-date-or-last-end-date.html">Using reporting_date or last_end_date</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changing-year-filter-scope.html">Changing year filter scope</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../api-reference.html">API reference</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of API reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../api/xbrl_filings_api.query.html">query</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api/xbrl_filings_api.Filing.html">Filing</a></li>
@@ -177,7 +183,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../api/xbrl_filings_api.SQLiteView.html">SQLiteView</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api/xbrl_filings_api.constants.html">constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api/xbrl_filings_api.ScopeFlag.html">ScopeFlag</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../api/xbrl_filings_api.DEFAULT_VIEWS.html">DEFAULT_VIEWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/xbrl_filings_api.default_views.html">default_views</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api/xbrl_filings_api.exceptions.html">exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api/xbrl_filings_api.options.html">options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api/xbrl_filings_api.stats.html">stats</a></li>
@@ -237,7 +243,7 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <section id="json-tree-jsontree">
 <h1>json_tree.JSONTree<a class="headerlink" href="#json-tree-jsontree" title="Link to this heading">¶</a></h1>
 <dl class="py class">
@@ -293,7 +299,10 @@ the identically named functions of the <a class="reference internal" href="../..
 <tr class="row-odd"><td><p><a class="reference internal" href="#xbrl_filings_api.json_tree.JSONTree.tree" title="xbrl_filings_api.json_tree.JSONTree.tree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tree</span></code></a></p></td>
 <td><p>JSON fragment as Python dict from API page response.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#xbrl_filings_api.json_tree.JSONTree.do_not_track" title="xbrl_filings_api.json_tree.JSONTree.do_not_track"><code class="xref py py-obj docutils literal notranslate"><span class="pre">do_not_track</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#xbrl_filings_api.json_tree.JSONTree.request_url" title="xbrl_filings_api.json_tree.JSONTree.request_url"><code class="xref py py-obj docutils literal notranslate"><span class="pre">request_url</span></code></a></p></td>
+<td><p>Base URL for ParseType.URL.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xbrl_filings_api.json_tree.JSONTree.do_not_track" title="xbrl_filings_api.json_tree.JSONTree.do_not_track"><code class="xref py py-obj docutils literal notranslate"><span class="pre">do_not_track</span></code></a></p></td>
 <td><p>When <code class="code highlight pt python docutils literal highlight-python"><span class="kc">True</span></code>, does not track successful and total <a class="reference internal" href="#xbrl_filings_api.json_tree.JSONTree.get" title="xbrl_filings_api.json_tree.JSONTree.get"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">get()</span></code></a> method calls for <a class="reference internal" href="../../api/xbrl_filings_api.debug.html#module-xbrl_filings_api.debug" title="xbrl_filings_api.debug"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">debug</span></code></a> module.</p></td>
 </tr>
 </tbody>
@@ -348,6 +357,12 @@ the identically named functions of the <a class="reference internal" href="../..
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="xbrl_filings_api.json_tree.JSONTree.request_url">
+<span class="sig-name descname"><span class="pre">request_url</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><a class="headerlink" href="#xbrl_filings_api.json_tree.JSONTree.request_url" title="Link to this definition">¶</a></dt>
+<dd><p>Base URL for ParseType.URL.</p>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="xbrl_filings_api.json_tree.JSONTree.do_not_track">
 <span class="sig-name descname"><span class="pre">do_not_track</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#xbrl_filings_api.json_tree.JSONTree.do_not_track" title="Link to this definition">¶</a></dt>
 <dd><p>When <code class="code highlight pt python docutils literal highlight-python"><span class="kc">True</span></code>, does not track successful and total <a class="reference internal" href="#xbrl_filings_api.json_tree.JSONTree.get" title="xbrl_filings_api.json_tree.JSONTree.get"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">get()</span></code></a>
@@ -376,7 +391,7 @@ ISO style UTC strings such as <code class="docutils literal notranslate"><span c
 The return value is locale-aware and if the string does not
 specify timezone, it will be on UTC.</p>
 <p>Value <a class="reference internal" href="xbrl_filings_api.parse_type.ParseType.html#xbrl_filings_api.parse_type.ParseType.DATE" title="xbrl_filings_api.parse_type.ParseType.DATE"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">ParseType.DATE</span></code></a> parses naive dates and <a class="reference internal" href="xbrl_filings_api.parse_type.ParseType.html#xbrl_filings_api.parse_type.ParseType.URL" title="xbrl_filings_api.parse_type.ParseType.URL"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">ParseType.URL</span></code></a>
-resolves relative URLs based on <a class="reference internal" href="../../api/xbrl_filings_api.options.html#xbrl_filings_api.options.entry_point_url" title="xbrl_filings_api.options.entry_point_url"><code class="xref any py py-data docutils literal notranslate"><span class="pre">options.entry_point_url</span></code></a>.</p>
+resolves relative URLs based on <a class="reference internal" href="#xbrl_filings_api.json_tree.JSONTree.request_url" title="xbrl_filings_api.json_tree.JSONTree.request_url"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">request_url</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -458,6 +473,7 @@ fragment. E.g.
 <li><a class="reference internal" href="#xbrl_filings_api.json_tree.JSONTree.get_unaccessed_key_paths"><code class="docutils literal notranslate"><span class="pre">JSONTree.get_unaccessed_key_paths()</span></code></a></li>
 <li><a class="reference internal" href="#xbrl_filings_api.json_tree.JSONTree.class_name"><code class="docutils literal notranslate"><span class="pre">JSONTree.class_name</span></code></a></li>
 <li><a class="reference internal" href="#xbrl_filings_api.json_tree.JSONTree.tree"><code class="docutils literal notranslate"><span class="pre">JSONTree.tree</span></code></a></li>
+<li><a class="reference internal" href="#xbrl_filings_api.json_tree.JSONTree.request_url"><code class="docutils literal notranslate"><span class="pre">JSONTree.request_url</span></code></a></li>
 <li><a class="reference internal" href="#xbrl_filings_api.json_tree.JSONTree.do_not_track"><code class="docutils literal notranslate"><span class="pre">JSONTree.do_not_track</span></code></a></li>
 <li><a class="reference internal" href="#xbrl_filings_api.json_tree.JSONTree.close"><code class="docutils literal notranslate"><span class="pre">JSONTree.close()</span></code></a></li>
 <li><a class="reference internal" href="#xbrl_filings_api.json_tree.JSONTree.get"><code class="docutils literal notranslate"><span class="pre">JSONTree.get()</span></code></a></li>
@@ -477,6 +493,8 @@ fragment. E.g.
 </div><script src="../../_static/documentation_options.js?v=036e6a88"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/scripts/furo.js?v=4e2eecee"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=6dbb43f8"></script>
     </body>
 </html>

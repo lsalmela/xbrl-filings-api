@@ -3,14 +3,17 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="Documentation for Python library xbrl-filings-api" name="description" />
-<meta content="XBRL, ESEF, IFRS" name="keywords" />
+<meta property="og:title" content="ValidationMessage" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://lsalmela.github.io/xbrl-filings-api/api/xbrl_filings_api.ValidationMessage.html" />
+<meta property="og:site_name" content="XBRL Filings API Documentation" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="APIError" href="xbrl_filings_api.APIError.html" /><link rel="prev" title="Entity" href="xbrl_filings_api.Entity.html" />
 
-    <!-- Generated with Sphinx 7.3.7 and Furo 2024.01.29 -->
-        <title>ValidationMessage - xbrl-filings-api 1.0a1 documentation</title>
+    <!-- Generated with Sphinx 7.3.7 and Furo 2024.04.27 -->
+        <title>ValidationMessage - XBRL Filings API Documentation 1.0a1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=437aa6ec" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
     
     
@@ -114,6 +117,8 @@
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
 
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
 
 
 <div class="page">
@@ -125,7 +130,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">xbrl-filings-api 1.0a1 documentation</div></a>
+      <a href="../index.html"><div class="brand">XBRL Filings API Documentation 1.0a1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +153,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">xbrl-filings-api 1.0a1 documentation</span>
+  <span class="sidebar-brand-text">XBRL Filings API Documentation 1.0a1 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -160,6 +165,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reporting-date-or-last-end-date.html">Using reporting_date or last_end_date</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changing-year-filter-scope.html">Changing year filter scope</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../api-reference.html">API reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of API reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.query.html">query</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.Filing.html">Filing</a></li>
@@ -177,7 +183,7 @@
 <li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.SQLiteView.html">SQLiteView</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.constants.html">constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.ScopeFlag.html">ScopeFlag</a></li>
-<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.DEFAULT_VIEWS.html">DEFAULT_VIEWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.default_views.html">default_views</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.exceptions.html">exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.options.html">options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xbrl_filings_api.stats.html">stats</a></li>
@@ -237,7 +243,7 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <section id="validationmessage">
 <h1>ValidationMessage<a class="headerlink" href="#validationmessage" title="Link to this heading">¶</a></h1>
 <dl class="py class">
@@ -245,8 +251,6 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xbrl_filings_api.</span></span><span class="sig-name descname"><span class="pre">ValidationMessage</span></span><a class="headerlink" href="#xbrl_filings_api.ValidationMessage" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="xbrl_filings_api.APIResource.html#xbrl_filings_api.APIResource" title="xbrl_filings_api.api_resource.APIResource"><code class="xref py py-class docutils literal notranslate"><span class="pre">APIResource</span></code></a></p>
 <p>Message for a filing in the database from a validator software.</p>
-<p>The source of validation has not been published by the API provider.
-However, it seems likely that they originate from Arelle software.</p>
 <p>Validation messages are issues in XBRL standard conformance, and the
 formula rules defined in the XBRL taxonomy.</p>
 <p>Country-specific filing rules defined by financial regulatory
@@ -255,6 +259,18 @@ The rules defined in ESEF Reporting Manual are not checked if they
 are not codified in the taxonomy formula rules.</p>
 <p>Calculation inconsistency is the term used for issues in accounting
 coherence.</p>
+<p>Derived attributes beginning <code class="docutils literal notranslate"><span class="pre">calc_</span></code> are only available when
+<a class="reference internal" href="#xbrl_filings_api.ValidationMessage.code" title="xbrl_filings_api.ValidationMessage.code"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">code</span></code></a> is <code class="docutils literal notranslate"><span class="pre">'xbrl.5.2.5.2:calcInconsistency'</span></code>. The ones beginning
+<code class="docutils literal notranslate"><span class="pre">duplicate_</span></code> are available for <a class="reference internal" href="#xbrl_filings_api.ValidationMessage.code" title="xbrl_filings_api.ValidationMessage.code"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">code</span></code></a>
+<code class="docutils literal notranslate"><span class="pre">'message:tech_duplicated_facts1'</span></code> if the values are numeric. They
+are parsed out from the <a class="reference internal" href="#xbrl_filings_api.ValidationMessage.text" title="xbrl_filings_api.ValidationMessage.text"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">text</span></code></a> of the message.</p>
+<div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<p>The source of validation has not been published by the API provider.
+However, it seems likely that they originate from Arelle software as
+they seem similar and JSON and iXBRL viewer files are also generated
+with it.</p>
+</div>
 <p class="rubric">Methods</p>
 <div class="table-wrapper autosummary longtable docutils container">
 <table class="autosummary longtable docutils align-default">
@@ -339,7 +355,7 @@ coherence.</p>
 <dt class="sig sig-object py" id="xbrl_filings_api.ValidationMessage.code">
 <span class="sig-name descname"><span class="pre">code</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><a class="headerlink" href="#xbrl_filings_api.ValidationMessage.code" title="Link to this definition">¶</a></dt>
 <dd><p>The code describing the source of the broken rule.</p>
-<p>For example, code <code class="docutils literal notranslate"><span class="pre">xbrl.5.2.5.2:calcInconsistency</span></code> refers to
+<p>For example, code <code class="docutils literal notranslate"><span class="pre">'xbrl.5.2.5.2:calcInconsistency'</span></code> refers to
 XBRL 2.1 base specification heading 5.2.5.2 with title “The
 &lt;calculationArc&gt; element”.</p>
 </dd></dl>
@@ -367,7 +383,7 @@ certainly not included anywhere (<code class="docutils literal notranslate"><spa
 <span class="sig-name descname"><span class="pre">calc_computed_sum</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><a class="headerlink" href="#xbrl_filings_api.ValidationMessage.calc_computed_sum" title="Link to this definition">¶</a></dt>
 <dd><p>Derived computed sum of the calculation inconsistency.</p>
 <p>Based on attribute <a class="reference internal" href="#xbrl_filings_api.ValidationMessage.text" title="xbrl_filings_api.ValidationMessage.text"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">text</span></code></a> for validation messages whose <a class="reference internal" href="#xbrl_filings_api.ValidationMessage.code" title="xbrl_filings_api.ValidationMessage.code"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">code</span></code></a>
-is <code class="docutils literal notranslate"><span class="pre">xbrl.5.2.5.2:calcInconsistency</span></code>.</p>
+is <code class="docutils literal notranslate"><span class="pre">'xbrl.5.2.5.2:calcInconsistency'</span></code>.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -375,7 +391,7 @@ is <code class="docutils literal notranslate"><span class="pre">xbrl.5.2.5.2:cal
 <span class="sig-name descname"><span class="pre">calc_reported_sum</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><a class="headerlink" href="#xbrl_filings_api.ValidationMessage.calc_reported_sum" title="Link to this definition">¶</a></dt>
 <dd><p>Derived reported sum of the calculation inconsistency.</p>
 <p>Based on attribute <a class="reference internal" href="#xbrl_filings_api.ValidationMessage.text" title="xbrl_filings_api.ValidationMessage.text"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">text</span></code></a> for validation messages whose <a class="reference internal" href="#xbrl_filings_api.ValidationMessage.code" title="xbrl_filings_api.ValidationMessage.code"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">code</span></code></a>
-is <code class="docutils literal notranslate"><span class="pre">xbrl.5.2.5.2:calcInconsistency</span></code>.</p>
+is <code class="docutils literal notranslate"><span class="pre">'xbrl.5.2.5.2:calcInconsistency'</span></code>.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -383,7 +399,7 @@ is <code class="docutils literal notranslate"><span class="pre">xbrl.5.2.5.2:cal
 <span class="sig-name descname"><span class="pre">calc_context_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><a class="headerlink" href="#xbrl_filings_api.ValidationMessage.calc_context_id" title="Link to this definition">¶</a></dt>
 <dd><p>Derived XBRL context ID of the calculation inconsistency.</p>
 <p>Based on attribute <a class="reference internal" href="#xbrl_filings_api.ValidationMessage.text" title="xbrl_filings_api.ValidationMessage.text"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">text</span></code></a> for validation messages whose <a class="reference internal" href="#xbrl_filings_api.ValidationMessage.code" title="xbrl_filings_api.ValidationMessage.code"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">code</span></code></a>
-is <code class="docutils literal notranslate"><span class="pre">xbrl.5.2.5.2:calcInconsistency</span></code>.</p>
+is <code class="docutils literal notranslate"><span class="pre">'xbrl.5.2.5.2:calcInconsistency'</span></code>.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -394,7 +410,7 @@ is <code class="docutils literal notranslate"><span class="pre">xbrl.5.2.5.2:cal
 concept) with the taxonomy prefix and the local name parts. It
 could be for example <code class="docutils literal notranslate"><span class="pre">ifrs-full:Assets</span></code>.</p>
 <p>Based on attribute <a class="reference internal" href="#xbrl_filings_api.ValidationMessage.text" title="xbrl_filings_api.ValidationMessage.text"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">text</span></code></a> for validation messages whose <a class="reference internal" href="#xbrl_filings_api.ValidationMessage.code" title="xbrl_filings_api.ValidationMessage.code"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">code</span></code></a>
-is <code class="docutils literal notranslate"><span class="pre">xbrl.5.2.5.2:calcInconsistency</span></code>.</p>
+is <code class="docutils literal notranslate"><span class="pre">'xbrl.5.2.5.2:calcInconsistency'</span></code>.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -406,7 +422,7 @@ inconsistency.</p>
 “<a class="reference external" href="http://www.example.com/esef/taxonomy/2022-12-31/FinancialPositionConsolidated">http://www.example.com/esef/taxonomy/2022-12-31/FinancialPositionConsolidated</a>”
 is truncated to “FinancialPositionConsolidated”.</p>
 <p>Based on attribute <a class="reference internal" href="#xbrl_filings_api.ValidationMessage.text" title="xbrl_filings_api.ValidationMessage.text"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">text</span></code></a> for validation messages whose <a class="reference internal" href="#xbrl_filings_api.ValidationMessage.code" title="xbrl_filings_api.ValidationMessage.code"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">code</span></code></a>
-is <code class="docutils literal notranslate"><span class="pre">xbrl.5.2.5.2:calcInconsistency</span></code>.</p>
+is <code class="docutils literal notranslate"><span class="pre">'xbrl.5.2.5.2:calcInconsistency'</span></code>.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -419,9 +435,9 @@ the addends for <a class="reference internal" href="#xbrl_filings_api.Validation
 XBRL taxonomies of this report and which were not reported in
 the same XBRL context with this fact.</p>
 <p>When the data is output to a database, this field is a string
-with parts joined by a newline character (’n’).</p>
+with parts joined by a newline character.</p>
 <p>Based on attribute <a class="reference internal" href="#xbrl_filings_api.ValidationMessage.text" title="xbrl_filings_api.ValidationMessage.text"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">text</span></code></a> for validation messages whose <a class="reference internal" href="#xbrl_filings_api.ValidationMessage.code" title="xbrl_filings_api.ValidationMessage.code"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">code</span></code></a>
-is <code class="docutils literal notranslate"><span class="pre">xbrl.5.2.5.2:calcInconsistency</span></code>.</p>
+is <code class="docutils literal notranslate"><span class="pre">'xbrl.5.2.5.2:calcInconsistency'</span></code>.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -429,8 +445,8 @@ is <code class="docutils literal notranslate"><span class="pre">xbrl.5.2.5.2:cal
 <span class="sig-name descname"><span class="pre">duplicate_greater</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><a class="headerlink" href="#xbrl_filings_api.ValidationMessage.duplicate_greater" title="Link to this definition">¶</a></dt>
 <dd><p>Derived greater item of the duplicate pair.</p>
 <p>Based on attribute <a class="reference internal" href="#xbrl_filings_api.ValidationMessage.text" title="xbrl_filings_api.ValidationMessage.text"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">text</span></code></a> for validation messages whose <a class="reference internal" href="#xbrl_filings_api.ValidationMessage.code" title="xbrl_filings_api.ValidationMessage.code"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">code</span></code></a>
-is <code class="docutils literal notranslate"><span class="pre">message:tech_duplicated_facts1</span></code>.</p>
-<p>Does not include code <code class="docutils literal notranslate"><span class="pre">formula:assertionUnsatisfied</span></code> with
+is <code class="docutils literal notranslate"><span class="pre">'message:tech_duplicated_facts1'</span></code>.</p>
+<p>Does not include code <code class="docutils literal notranslate"><span class="pre">'formula:assertionUnsatisfied'</span></code> with
 <code class="docutils literal notranslate"><span class="pre">tech_duplicated_facts1</span></code> in the beginning of the message (more
 than 2 duplicated facts).</p>
 </dd></dl>
@@ -440,8 +456,8 @@ than 2 duplicated facts).</p>
 <span class="sig-name descname"><span class="pre">duplicate_lesser</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><a class="headerlink" href="#xbrl_filings_api.ValidationMessage.duplicate_lesser" title="Link to this definition">¶</a></dt>
 <dd><p>Derived lesser item of the duplicate pair.</p>
 <p>Based on attribute <a class="reference internal" href="#xbrl_filings_api.ValidationMessage.text" title="xbrl_filings_api.ValidationMessage.text"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">text</span></code></a> for validation messages whose <a class="reference internal" href="#xbrl_filings_api.ValidationMessage.code" title="xbrl_filings_api.ValidationMessage.code"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">code</span></code></a>
-is <code class="docutils literal notranslate"><span class="pre">message:tech_duplicated_facts1</span></code>.</p>
-<p>Does not include code <code class="docutils literal notranslate"><span class="pre">formula:assertionUnsatisfied</span></code> with
+is <code class="docutils literal notranslate"><span class="pre">'message:tech_duplicated_facts1'</span></code>.</p>
+<p>Does not include code <code class="docutils literal notranslate"><span class="pre">'formula:assertionUnsatisfied'</span></code> with
 <code class="docutils literal notranslate"><span class="pre">tech_duplicated_facts1</span></code> in the beginning of the message (more
 than 2 duplicated facts).</p>
 </dd></dl>
@@ -575,6 +591,8 @@ Square brackets are used to encompass <code class="docutils literal notranslate"
 </div><script src="../_static/documentation_options.js?v=036e6a88"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/scripts/furo.js?v=4e2eecee"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=6dbb43f8"></script>
     </body>
 </html>

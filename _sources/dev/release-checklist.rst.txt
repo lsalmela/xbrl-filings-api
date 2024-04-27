@@ -27,6 +27,19 @@ Documentation
 
 4. Update ``conf.py::release``
 
+5. Check external link integrity (in project shell/project folder):
+
+   .. code-block:: console
+
+        hatch run doc:linkcheck
+
+   Do not care about URIs such as role URI example::
+
+        http://www.example.com/esef/taxonomy/2022-12-31/FinancialPositionConsolidated
+
+6. Go through narrative documentation so that functions and methods work
+   as documented.
+
 Final steps
 -----------
 

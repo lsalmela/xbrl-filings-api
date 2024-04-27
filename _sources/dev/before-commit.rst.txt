@@ -1,6 +1,12 @@
 Before commit
 =============
 
+Run the commands in project shell/project folder.
+
+.. code-block:: console
+
+    hatch shell
+
 1. Check formatting with ``ruff`` by running command:
 
    .. code-block:: console
