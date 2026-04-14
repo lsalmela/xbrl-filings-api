@@ -34,12 +34,11 @@ Attribute reporting_date
 ------------------------
 
 The attribute `reporting_date` has been derived from the filename in
-`package_url` and `last_end_date`, and falls back to using
-`last_end_date` if neither could be resolved. This is the file naming
-convention used in ESEF reporting (`ESEF Reporting Manual`_,
-Guidance 2.6.3). There are mistakes in the filenames as well, but
-technical issues such as very lately dated tagged facts do not interfere
-with it.
+`package_url`, and falls back to using `last_end_date` if filename date
+cannot be resolved. This is the file naming convention used in ESEF
+reporting (`ESEF Reporting Manual`_, Guidance 2.6.3). There are
+mistakes in the filenames as well, but technical issues such as very
+lately dated tagged facts do not interfere with it.
 
 A major caveat with this value is that as a field derived by the
 library, it cannot be used in filtering and sorting the query.
