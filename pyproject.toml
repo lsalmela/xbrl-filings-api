@@ -7,7 +7,7 @@ name = "xbrl-filings-api"
 dynamic = ["version"]
 description = 'Python API for filings.xbrl.org XBRL report repository.'
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 license = "MIT"
 keywords = [
     "XBRL", "ESEF", "JSON", "JSON-API", "IFRS", "annual financial report",
@@ -23,10 +23,11 @@ authors = [
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python",
     "Programming Language :: SQL",
@@ -49,6 +50,16 @@ Homepage = "https://github.com/lsalmela/xbrl-filings-api"
 Documentation = "https://lsalmela.github.io/xbrl-filings-api"
 Source = "https://github.com/lsalmela/xbrl-filings-api"
 Issues = "https://github.com/lsalmela/xbrl-filings-api/issues"
+
+[dependency-groups]
+# See tool.hatch.envs.default.dependencies for comments
+dev = [
+    "coverage[toml]>=7.4",
+    "pandas>=2.1.4",
+    "pytest>=7.4",
+    "pytest-asyncio>=0.23.5",
+    "responses~=0.23.3",
+]
 
 [tool.hatch.version]
 path = "xbrl_filings_api/__about__.py"
@@ -87,7 +98,7 @@ cov = [
 ]
 
 [[tool.hatch.envs.all.matrix]]
-python = ["3.9", "3.10", "3.11", "3.12"]
+python = ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
 [tool.hatch.envs.lint]
 detached = true

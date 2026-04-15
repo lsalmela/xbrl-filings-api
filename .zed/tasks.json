@@ -1,0 +1,22 @@
+[
+  {
+    "label": "Sync both virtual environments",
+    "command": "source script/sync-venvs",
+  },
+  {
+    "label": "Run pytest with coverage for newest environment",
+    "command": "source script/run-coverage-pytest report",
+  },
+  {
+    "label": "Run pytest with coverage for newest environment (HTML)",
+    "command": "source script/run-coverage-pytest html",
+  },
+  {
+    "label": "Run pytest with coverage for both environments",
+    "command": "source script/run-coverage-pytest-both report",
+  },
+  {
+    "label": "Run pytest with coverage for both environments (HTML)",
+    "command": "source script/run-coverage-pytest-both html",
+  },
+]

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+source .venv/bin/activate
+echo 'Sync latest Python version (>=3.14) environment'
+uv sync --active
+
+echo 'Sync Python 3.10 environment'
+source .venv3.10/bin/activate
+uv sync --active

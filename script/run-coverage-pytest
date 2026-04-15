@@ -1,0 +1,8 @@
+#!/bin/bash
+
+printf '##### Run tests with latest Python version (>=3.14) #####\n\n'
+source .venv/bin/activate
+coverage run -m pytest tests
+
+coverage combine
+coverage $1

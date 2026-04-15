@@ -104,6 +104,9 @@ docstring-quotes = "double"
 inline-quotes = "single"
 multiline-quotes = "double"
 
+[format]
+quote-style = "single"
+
 [isort]
 known-first-party = ["xbrl_filings_api"]
 
