@@ -14,7 +14,7 @@ import logging
 import os
 import sqlite3
 from collections.abc import Collection, Sequence
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 from typing import Optional
 
@@ -255,10 +255,17 @@ def _insert_data(
         for item in data_objs[table_name]:
             col_data = []
             for col in cols:
+                val = None
                 if col.endswith('_time') and col != 'query_time':
-                    col_data.append(getattr(item, f'{col}_str'))
+                    val = getattr(item, f'{col}_str')
                 else:
-                    col_data.append(getattr(item, col))
+                    val = getattr(item, col)
+
+                # Default date/datetime formatter deprecated in Py3.12
+                if isinstance(val, date):
+                    val = val.isoformat()
+
+                col_data.append(val)
             records.append(tuple(col_data))
         colsql = '\n  ' + ',\n  '.join(cols) + '\n  '
         phs = ', '.join(['?'] * len(cols))
